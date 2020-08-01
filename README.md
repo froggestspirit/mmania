@@ -1,5 +1,5 @@
 # mmania
-Decomp of Mole Mania
+Disassembly of Mole Mania
 
 Requires Mole Mania US rom named "baserom.gb"
 
