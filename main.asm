@@ -4214,7 +4214,7 @@ Logged_0x1910:
 	add a,[hl]
 	ld c,a
 	ld b,$00
-	ld hl,$3F66
+	ld hl,WorldPointers
 	add hl,bc
 	ld a,[$FF00+$8C]
 	push af
@@ -5047,13 +5047,13 @@ Logged_0x1E96:
 	ret
 
 Logged_0x1EA2:
-	ld hl,$C9E4
+	ld hl,$C9E4;world number
 	ld a,[hl]
 	add a,a
 	add a,[hl]
 	ld c,a
 	ld b,$00
-	ld hl,$3F66
+	ld hl,WorldPointers
 	add hl,bc
 	ld a,[$FF00+$8C]
 	push af
@@ -5067,7 +5067,7 @@ Logged_0x1EA2:
 	ld l,a
 	ld bc,$0009
 	add hl,bc
-	ld a,[$CFDB]
+	ld a,[$CFDB];level room number
 	add a,a
 	ld c,a
 	ld b,$00
@@ -5833,7 +5833,7 @@ Logged_0x22AD:
 	add a,[hl]
 	ld c,a
 	ld b,$00
-	ld hl,$3F66
+	ld hl,WorldPointers
 	add hl,bc
 	ld a,[$FF00+$8C]
 	push af
@@ -10379,11 +10379,16 @@ INCBIN "baserom.gb", $3ED4, $3ED8 - $3ED4
 UnknownData_0x3ED8:
 INCBIN "baserom.gb", $3ED8, $3F66 - $3ED8
 
-LoggedData_0x3F66:
-INCBIN "baserom.gb", $3F66, $3F7E - $3F66
-
-UnknownData_0x3F7E:
-INCBIN "baserom.gb", $3F7E, $4000 - $3F7E
+WorldPointers:
+	dbw World1Pointer
+	dbw World2Pointer
+	dbw World3Pointer
+	dbw World4Pointer
+	dbw World5Pointer
+	dbw World6Pointer
+	dbw World7Pointer
+	dbw World8Pointer
+	dbw World9Pointer
 
 SECTION "Bank01", ROMX, BANK[$01]
 
@@ -81955,8 +81960,14 @@ INCBIN "baserom.gb", $6BD6D, $6C000 - $6BD6D
 
 SECTION "Bank1B", ROMX, BANK[$1B]
 
-LoggedData_0x6C000:
-INCBIN "baserom.gb", $6C000, $6CE25 - $6C000
+World2Pointer:
+	dw LoggedData_0x6C004
+
+World4Pointer:
+INCBIN "baserom.gb", $6C002, $6C004 - $6C002
+
+LoggedData_0x6C004:
+INCBIN "baserom.gb", $6C004, $6CE25 - $6C004
 
 UnknownData_0x6CE25:
 INCBIN "baserom.gb", $6CE25, $6CE26 - $6CE25
@@ -82071,8 +82082,14 @@ INCBIN "baserom.gb", $6F870, $70000 - $6F870
 
 SECTION "Bank1C", ROMX, BANK[$1C]
 
-LoggedData_0x70000:
-INCBIN "baserom.gb", $70000, $712DE - $70000
+World3Pointer:
+	dw LoggedData_0x70004
+
+World5Pointer:
+INCBIN "baserom.gb", $70002, $70004 - $70002
+
+LoggedData_0x70004:
+INCBIN "baserom.gb", $70004, $712DE - $70004
 
 UnknownData_0x712DE:
 INCBIN "baserom.gb", $712DE, $712DF - $712DE
@@ -82175,8 +82192,14 @@ INCBIN "baserom.gb", $73A1F, $74000 - $73A1F
 
 SECTION "Bank1D", ROMX, BANK[$1D]
 
-LoggedData_0x74000:
-INCBIN "baserom.gb", $74000, $74C8F - $74000
+World1Pointer:
+	dw UnknownData_0x74004
+
+World6Pointer:
+INCBIN "baserom.gb", $74002, $74004 - $74002
+
+UnknownData_0x74004:
+INCBIN "baserom.gb", $74004, $74C8F - $74004
 
 UnknownData_0x74C8F:
 INCBIN "baserom.gb", $74C8F, $74C90 - $74C8F
@@ -82348,10 +82371,10 @@ INCBIN "baserom.gb", $77FD0, $78000 - $77FD0
 
 SECTION "Bank1E", ROMX, BANK[$1E]
 
-LoggedData_0x78000:
-INCBIN "baserom.gb", $78000, $78002 - $78000
+World8Pointer:
+	dw LoggedData_0x78004
 
-UnknownData_0x78002:
+World9Pointer:
 INCBIN "baserom.gb", $78002, $78004 - $78002
 
 LoggedData_0x78004:
@@ -83608,8 +83631,11 @@ INCBIN "baserom.gb", $7B860, $7C000 - $7B860
 
 SECTION "Bank1F", ROMX, BANK[$1F]
 
-LoggedData_0x7C000:
-INCBIN "baserom.gb", $7C000, $7E665 - $7C000
+World7Pointer:
+INCBIN "baserom.gb", $7C000, $7C002 - $7C000
+
+LoggedData_0x7C002:
+INCBIN "baserom.gb", $7C002, $7E665 - $7C002
 
 UnknownData_0x7E665:
 INCBIN "baserom.gb", $7E665, $7E666 - $7E665
