@@ -1388,14 +1388,15 @@ Logged_0x091D:
 	jr nz,Logged_0x091D
 	ret
 
-Logged_0x0922:
+Load_Data:
+;loads data from HL to DE with BC size
 	ld a,[hli]
 	ld [de],a
 	inc de
 	dec bc
 	ld a,b
 	or c
-	jr nz,Logged_0x0922
+	jr nz,Load_Data
 	ret
 
 Logged_0x092B:
@@ -1702,7 +1703,8 @@ Logged_0x0A59:
 	rst BankSwitch
 	ret
 
-Logged_0x0A96:
+Load_Tileset:
+; loads tileset A
 	ld b,a
 	ldh a,[$FF00+$8C]
 	push af
@@ -1711,7 +1713,7 @@ Logged_0x0A96:
 	ld h,$00
 	ld l,b
 	add hl,hl
-	ld de,$4CDC
+	ld de, TilesetPointers
 	add hl,de
 	ld a,[hli]
 	ld h,[hl]
@@ -1719,7 +1721,7 @@ Logged_0x0A96:
 	ld a,[hli]
 	ld c,a
 
-Logged_0x0AAA:
+.continue_load
 	push bc
 	ld a,$02
 	rst BankSwitch
@@ -1744,13 +1746,13 @@ Logged_0x0AAA:
 	pop af
 	ld b,a
 	pop hl
-	call Logged_0x0922
+	call Load_Data
 	pop hl
 	ld de,$0007
 	add hl,de
 	pop bc
 	dec c
-	jr nz,Logged_0x0AAA
+	jr nz, .continue_load
 	pop af
 	rst BankSwitch
 	ret
@@ -3760,7 +3762,7 @@ Unknown_0x1593:
 	ld hl,$5AE6
 	ld de,$8800
 	ld bc,$1000
-	call Logged_0x0922
+	call Load_Data
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$18
@@ -3771,7 +3773,7 @@ Unknown_0x1593:
 	ld hl,$6AE6
 	ld de,$8800
 	ld bc,$1000
-	call Logged_0x0922
+	call Load_Data
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$19
@@ -3782,7 +3784,7 @@ Unknown_0x1593:
 	ld hl,$70C6
 	ld de,$8800
 	ld bc,$0860
-	call Logged_0x0922
+	call Load_Data
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$1A
@@ -3793,7 +3795,7 @@ Unknown_0x1593:
 	ld hl,$4000
 	ld de,$8800
 	ld bc,$1000
-	call Logged_0x0922
+	call Load_Data
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$04
@@ -3802,7 +3804,7 @@ Unknown_0x1593:
 	ld hl,$5000
 	ld de,$8800
 	ld bc,$0FD2
-	call Logged_0x0922
+	call Load_Data
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$05
@@ -6078,7 +6080,7 @@ Logged_0x243F:
 	call Logged_0x05EA
 	ld a,[$CFDD]
 	add a,$58
-	call Logged_0x0A96
+	call Load_Tileset
 	ld b,$48
 	ld a,[$D141]
 	rra
@@ -6652,7 +6654,7 @@ Logged_0x282F:
 	add a,$58
 
 Logged_0x2834:
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9800
 	ld bc,$0400
 	ld a,$55
@@ -6739,7 +6741,7 @@ Logged_0x28D3:
 	dec c
 	jr nz,Logged_0x28D3
 	xor a
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9C00
 	ld bc,$0400
 	xor a
@@ -10693,7 +10695,7 @@ Unknown_0x421B:
 	ld [$C9E4],a
 	ld a,[$CFDB]
 	add a,$38
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,$50
 	call Logged_0x1629
 	ld a,$50
@@ -10792,7 +10794,7 @@ Logged_0x42D3:
 	ld [$D143],a
 	ld a,[$CFDD]
 	add a,$58
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,[$CFDD]
 	add a,a
 	add a,$48
@@ -10949,7 +10951,7 @@ Logged_0x4408:
 	inc [hl]
 	ld a,[hl]
 	add a,$48
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,[$CEB5]
 	add a,a
 	add a,$48
@@ -12465,7 +12467,7 @@ Logged_0x4FA4:
 	ld a,$83
 	ldh [$FF00+$49],a
 	ld a,$38
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,$77
 	call Logged_0x1629
 	ld a,$77
@@ -12674,7 +12676,7 @@ Logged_0x5188:
 	add a,$50
 
 Logged_0x518D:
-	call Logged_0x0A96
+	call Load_Tileset
 	ldh a,[$FF00+$90]
 	cp $0E
 	jr nz,Logged_0x51A0
@@ -15925,91 +15927,369 @@ UnknownData_0x8B9C:
 INCBIN "baserom.gb", $8B9C, $8C62 - $8B9C
 
 LoggedData_0x8C62:
-INCBIN "baserom.gb", $8C62, $8CDE - $8C62
+INCBIN "baserom.gb", $8C62, $8CDC - $8C62
 
-UnknownData_0x8CDE:
-INCBIN "baserom.gb", $8CDE, $8CE0 - $8CDE
+TilesetPointers:
+dw Tileset_00
+dw Tileset_01
+dw Tileset_02
+dw Tileset_03
+dw Tileset_04
+dw Tileset_05
+dw Tileset_06
+dw Tileset_07
+dw Tileset_08
+dw Tileset_09
+dw Tileset_0A
+dw Tileset_0B
+dw Tileset_0C
+dw Tileset_0D
+dw Tileset_0E
+dw Tileset_0F
+dw Tileset_10
+dw Tileset_11
+dw Tileset_12
+dw Tileset_13
+dw Tileset_14
+dw Tileset_15
+dw Tileset_16
+dw Tileset_17
+dw Tileset_18
+dw Tileset_19
+dw Tileset_1A
+dw Tileset_1B
+dw Tileset_1C
+dw Tileset_1D
+dw Tileset_1E
+dw Tileset_1F
+dw Tileset_20
+dw Tileset_21
+dw Tileset_22
+dw Tileset_23
+dw Tileset_24
+dw Tileset_25
+dw Tileset_26
+dw Tileset_27
+dw Tileset_28
+dw Tileset_29
+dw Tileset_2A
+dw Tileset_2B
+dw Tileset_2C
+dw Tileset_2D
+dw Tileset_2E
+dw Tileset_2F
+dw Tileset_30
+dw Tileset_31
+dw Tileset_32
+dw Tileset_33
+dw Tileset_34
+dw Tileset_35
+dw Tileset_36
+dw Tileset_37
+dw Tileset_38
+dw Tileset_39
+dw Tileset_3A
+dw Tileset_3B
+dw Tileset_3C
+dw Tileset_3D
+dw Tileset_3E
+dw Tileset_3F
+dw Tileset_40
+dw Tileset_41
+dw Tileset_42
+dw Tileset_43
+dw Tileset_44
+dw Tileset_45
+dw Tileset_46
+dw Tileset_47
+dw Tileset_48
+dw Tileset_49
+dw Tileset_4A
+dw Tileset_4B
+dw Tileset_4C
+dw Tileset_4D
+dw Tileset_4E
+dw Tileset_4F
+dw Tileset_50
+dw Tileset_51
+dw Tileset_52
+dw Tileset_53
+dw Tileset_54
+dw Tileset_55
+dw Tileset_56
+dw Tileset_57
+dw Tileset_58
+dw Tileset_59
+dw Tileset_5A
+dw Tileset_5B
+dw Tileset_5C
+dw Tileset_5D
+dw Tileset_5E
+dw Tileset_5F
+dw Tileset_60
+dw Tileset_61
+dw Tileset_62
+dw Tileset_63
+dw Tileset_64
+dw Tileset_65
+dw Tileset_66
+dw Tileset_67
 
-LoggedData_0x8CE0:
-INCBIN "baserom.gb", $8CE0, $8CE4 - $8CE0
+Tileset_00:
+INCBIN "baserom.gb", $8DAC, $8DB4 - $8DAC
 
-UnknownData_0x8CE4:
-INCBIN "baserom.gb", $8CE4, $8CF0 - $8CE4
+Tileset_01:
+INCBIN "baserom.gb", $8DB4, $8DB4 - $8DB4
 
-LoggedData_0x8CF0:
-INCBIN "baserom.gb", $8CF0, $8CF2 - $8CF0
+Tileset_02:
+INCBIN "baserom.gb", $8DB4, $8DCA - $8DB4
 
-UnknownData_0x8CF2:
-INCBIN "baserom.gb", $8CF2, $8CF4 - $8CF2
+Tileset_03:
+INCBIN "baserom.gb", $8DCA, $8DD2 - $8DCA
 
-LoggedData_0x8CF4:
-INCBIN "baserom.gb", $8CF4, $8D1A - $8CF4
+Tileset_04:
+INCBIN "baserom.gb", $8DD2, $8E12 - $8DD2
 
-UnknownData_0x8D1A:
-INCBIN "baserom.gb", $8D1A, $8D1C - $8D1A
+Tileset_05:
+INCBIN "baserom.gb", $8E12, $8E52 - $8E12
 
-LoggedData_0x8D1C:
-INCBIN "baserom.gb", $8D1C, $8D32 - $8D1C
+Tileset_06:
+INCBIN "baserom.gb", $8E52, $8E7D - $8E52
 
-UnknownData_0x8D32:
-INCBIN "baserom.gb", $8D32, $8D38 - $8D32
+Tileset_07:
+INCBIN "baserom.gb", $8E7D, $8EBD - $8E7D
 
-LoggedData_0x8D38:
-INCBIN "baserom.gb", $8D38, $8D44 - $8D38
+Tileset_08:
+INCBIN "baserom.gb", $8EBD, $8EFD - $8EBD
 
-UnknownData_0x8D44:
-INCBIN "baserom.gb", $8D44, $8D4C - $8D44
+Tileset_09:
+INCBIN "baserom.gb", $8EFD, $8F28 - $8EFD
 
-LoggedData_0x8D4C:
-INCBIN "baserom.gb", $8D4C, $8D4E - $8D4C
-
-UnknownData_0x8D4E:
-INCBIN "baserom.gb", $8D4E, $8D6C - $8D4E
-
-LoggedData_0x8D6C:
-INCBIN "baserom.gb", $8D6C, $8D7E - $8D6C
-
-UnknownData_0x8D7E:
-INCBIN "baserom.gb", $8D7E, $8D84 - $8D7E
-
-LoggedData_0x8D84:
-INCBIN "baserom.gb", $8D84, $8D9A - $8D84
-
-UnknownData_0x8D9A:
-INCBIN "baserom.gb", $8D9A, $8D9C - $8D9A
-
-LoggedData_0x8D9C:
-INCBIN "baserom.gb", $8D9C, $8DD2 - $8D9C
-
-UnknownData_0x8DD2:
-INCBIN "baserom.gb", $8DD2, $8F28 - $8DD2
-
-LoggedData_0x8F28:
+Tileset_0A:
 INCBIN "baserom.gb", $8F28, $8F37 - $8F28
 
-UnknownData_0x8F37:
+Tileset_0B:
 INCBIN "baserom.gb", $8F37, $8F4D - $8F37
 
-LoggedData_0x8F4D:
-INCBIN "baserom.gb", $8F4D, $9143 - $8F4D
+Tileset_0C:
+INCBIN "baserom.gb", $8F4D, $8F7F - $8F4D
 
-UnknownData_0x9143:
+Tileset_0D:
+INCBIN "baserom.gb", $8F7F, $8FA3 - $8F7F
+
+Tileset_0E:
+INCBIN "baserom.gb", $8FA3, $8FAB - $8FA3
+
+Tileset_0F:
+INCBIN "baserom.gb", $8FAB, $8FC1 - $8FAB
+
+Tileset_10:
+INCBIN "baserom.gb", $8FC1, $8FD0 - $8FC1
+
+Tileset_11:
+INCBIN "baserom.gb", $8FD0, $8FDF - $8FD0
+
+Tileset_12:
+INCBIN "baserom.gb", $8FDF, $8FEE - $8FDF
+
+Tileset_13:
+INCBIN "baserom.gb", $8FEE, $8FFD - $8FEE
+
+Tileset_14:
+INCBIN "baserom.gb", $8FFD, $900C - $8FFD
+
+Tileset_15:
+INCBIN "baserom.gb", $900C, $901B - $900C
+
+Tileset_16:
+INCBIN "baserom.gb", $901B, $9031 - $901B
+
+Tileset_17:
+INCBIN "baserom.gb", $9031, $9047 - $9031
+
+Tileset_18:
+INCBIN "baserom.gb", $9047, $9064 - $9047
+
+Tileset_19:
+INCBIN "baserom.gb", $9064, $9081 - $9064
+
+Tileset_1A:
+INCBIN "baserom.gb", $9081, $909E - $9081
+
+Tileset_1B:
+INCBIN "baserom.gb", $909E, $90BB - $909E
+
+Tileset_1C:
+INCBIN "baserom.gb", $90BB, $90ED - $90BB
+
+Tileset_1D:
+INCBIN "baserom.gb", $90ED, $9126 - $90ED
+
+Tileset_1E:
+INCBIN "baserom.gb", $9126, $9143 - $9126
+
+Tileset_1F:
 INCBIN "baserom.gb", $9143, $9160 - $9143
 
-LoggedData_0x9160:
-INCBIN "baserom.gb", $9160, $9418 - $9160
+Tileset_20:
+INCBIN "baserom.gb", $9160, $9184 - $9160
 
-UnknownData_0x9418:
-INCBIN "baserom.gb", $9418, $9454 - $9418
+Tileset_21:
+INCBIN "baserom.gb", $9184, $91A8 - $9184
 
-LoggedData_0x9454:
-INCBIN "baserom.gb", $9454, $975D - $9454
+Tileset_22:
+INCBIN "baserom.gb", $91A8, $91E1 - $91A8
 
-UnknownData_0x975D:
+Tileset_23:
+INCBIN "baserom.gb", $91E1, $921A - $91E1
+
+Tileset_24:
+INCBIN "baserom.gb", $921A, $925A - $921A
+
+Tileset_25:
+INCBIN "baserom.gb", $925A, $928C - $925A
+
+Tileset_26:
+INCBIN "baserom.gb", $928C, $92A9 - $928C
+
+Tileset_27:
+INCBIN "baserom.gb", $92A9, $92C6 - $92A9
+
+Tileset_28:
+INCBIN "baserom.gb", $92C6, $92D5 - $92C6
+
+Tileset_29:
+INCBIN "baserom.gb", $92D5, $92F2 - $92D5
+
+Tileset_2A:
+INCBIN "baserom.gb", $92F2, $9301 - $92F2
+
+Tileset_2B:
+Tileset_2C:
+Tileset_2D:
+Tileset_2E:
+INCBIN "baserom.gb", $9301, $9317 - $9301
+
+Tileset_2F:
+INCBIN "baserom.gb", $9317, $9334 - $9317
+
+Tileset_30:
+INCBIN "baserom.gb", $9334, $935F - $9334
+
+Tileset_31:
+INCBIN "baserom.gb", $935F, $93A6 - $935F
+
+Tileset_32:
+INCBIN "baserom.gb", $93A6, $93D8 - $93A6
+
+Tileset_33:
+INCBIN "baserom.gb", $93D8, $9418 - $93D8
+
+Tileset_34:
+INCBIN "baserom.gb", $9418, $9427 - $9418
+
+Tileset_35:
+INCBIN "baserom.gb", $9427, $9436 - $9427
+
+Tileset_36:
+INCBIN "baserom.gb", $9436, $9445 - $9436
+
+Tileset_37:
+INCBIN "baserom.gb", $9445, $9454 - $9445
+
+Tileset_38:
+INCBIN "baserom.gb", $9454, $948D - $9454
+
+Tileset_39:
+Tileset_3A:
+Tileset_3B:
+Tileset_3C:
+Tileset_3D:
+Tileset_3E:
+Tileset_3F:
+Tileset_40:
+Tileset_41:
+Tileset_42:
+Tileset_43:
+Tileset_44:
+Tileset_45:
+Tileset_46:
+Tileset_47:
+Tileset_48:
+INCBIN "baserom.gb", $948D, $94BF - $948D
+
+Tileset_49:
+Tileset_4A:
+Tileset_4B:
+Tileset_4C:
+Tileset_4E:
+Tileset_4F:
+INCBIN "baserom.gb", $94BF, $94E3 - $94BF
+
+Tileset_4D:
+INCBIN "baserom.gb", $94E3, $9523 - $94E3
+
+Tileset_50:
+INCBIN "baserom.gb", $9523, $954E - $9523
+
+Tileset_51:
+Tileset_52:
+Tileset_53:
+Tileset_54:
+Tileset_56:
+Tileset_57:
+INCBIN "baserom.gb", $954E, $956B - $954E
+
+Tileset_55:
+INCBIN "baserom.gb", $956B, $95A4 - $956B
+
+Tileset_58:
+INCBIN "baserom.gb", $95A4, $95CF - $95A4
+
+Tileset_59:
+INCBIN "baserom.gb", $95CF, $9608 - $95CF
+
+Tileset_5A:
+INCBIN "baserom.gb", $9608, $9641 - $9608
+
+Tileset_5B:
+INCBIN "baserom.gb", $9641, $967A - $9641
+
+Tileset_5C:
+INCBIN "baserom.gb", $967A, $96CF - $967A
+
+Tileset_5D:
+INCBIN "baserom.gb", $96CF, $9724 - $96CF
+
+Tileset_5E:
+INCBIN "baserom.gb", $9724, $975D - $9724
+
+Tileset_5F:
 INCBIN "baserom.gb", $975D, $978F - $975D
 
-LoggedData_0x978F:
-INCBIN "baserom.gb", $978F, $99F1 - $978F
+Tileset_60:
+INCBIN "baserom.gb", $978F, $97CF - $978F
+
+Tileset_61:
+INCBIN "baserom.gb", $97CF, $9816 - $97CF
+
+Tileset_62:
+INCBIN "baserom.gb", $9816, $9872 - $9816
+
+Tileset_63:
+INCBIN "baserom.gb", $9872, $98CE - $9872
+
+Tileset_64:
+INCBIN "baserom.gb", $98CE, $9931 - $98CE
+
+Tileset_65:
+INCBIN "baserom.gb", $9931, $9986 - $9931
+
+Tileset_66:
+INCBIN "baserom.gb", $9986, $99C6 - $9986
+
+Tileset_67:
+INCBIN "baserom.gb", $99C6, $99F1 - $99C6 ; Todo get actual size
 
 UnknownData_0x99F1:
 INCBIN "baserom.gb", $99F1, $99F3 - $99F1
@@ -30641,7 +30921,7 @@ Logged_0x20089:
 	add a,$10
 	ld [$C115],a
 	ld a,$03
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$41C3
 	ld de,$C129
 	ld c,$0D
@@ -32230,7 +32510,7 @@ Logged_0x20B5E:
 	ld d,h
 	pop hl
 	ld bc,$0800
-	call Logged_0x0922
+	call Load_Data
 	ld a,$00
 	ld [$0000],a
 	ret
@@ -32358,7 +32638,7 @@ Unknown_0x20CEB:
 	ld bc,$1000
 	add hl,bc
 	ld bc,$0800
-	call Logged_0x0922
+	call Load_Data
 	pop hl
 
 Logged_0x20CFA:
@@ -32456,7 +32736,7 @@ INCBIN "baserom.gb", $20D69, $20D72 - $20D69
 Logged_0x20D72:
 	pop bc
 	inc bc
-	call Logged_0x0922
+	call Load_Data
 	pop bc
 	pop hl
 	ld a,$01
@@ -32975,7 +33255,7 @@ Logged_0x21095:
 	ld a,$E4
 	ldh [$FF00+$47],a
 	ld a,$0E
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9800
 	ld a,$E1
 	ld bc,$0400
@@ -33855,7 +34135,7 @@ Logged_0x21710:
 	ld hl,$D141
 	set 7,[hl]
 	ld a,$0C
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9800
 	xor a
 	ld bc,$0400
@@ -67073,7 +67353,7 @@ Logged_0x4401B:
 	call Logged_0x0914
 	call Logged_0x45747
 	ld a,$0F
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9800
 	ld de,$0010
 	call Logged_0x37A1
@@ -67218,7 +67498,7 @@ Logged_0x44140:
 	call Logged_0x0914
 	call Logged_0x3851
 	ld a,$29
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,$FF
 	ld [$D727],a
 	ld a,$7A
@@ -67368,12 +67648,12 @@ Logged_0x44284:
 	cp $46
 	jr c,Logged_0x4429E
 	ld a,$2A
-	call Logged_0x0A96
+	call Load_Tileset
 	jr Logged_0x442A3
 
 Logged_0x4429E:
 	ld a,$28
-	call Logged_0x0A96
+	call Load_Tileset
 
 Logged_0x442A3:
 	ld hl,$C5A0
@@ -67418,7 +67698,7 @@ Logged_0x442E6:
 
 Logged_0x442F1:
 	ld a,$29
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,$FF
 	ld [$D727],a
 	ld a,$7A
@@ -67625,7 +67905,7 @@ Logged_0x44452:
 	ldh [$FF00+$48],a
 	ldh [$FF00+$49],a
 	ld a,$0A
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$9800
 	ld de,$0003
 	call Logged_0x37A1
@@ -68765,7 +69045,7 @@ Logged_0x44BD1:
 	jr z,Logged_0x44C5C
 	ld a,[$C9E4]
 	add a,$10
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,[$C9E4]
 	add a,$08
 	ld e,a
@@ -68788,7 +69068,7 @@ Logged_0x44C38:
 	push af
 	push af
 	add a,$2D
-	call Logged_0x0A96
+	call Load_Tileset
 	pop af
 	add a,$28
 	ld e,a
@@ -68805,7 +69085,7 @@ Logged_0x44C38:
 Logged_0x44C5C:
 	ld a,[$C9E4]
 	add a,$10
-	call Logged_0x0A96
+	call Load_Tileset
 	ld a,[$C9E4]
 	add a,$08
 	ld e,a
@@ -68999,7 +69279,7 @@ Logged_0x44DA7:
 	ld a,$E0
 	ldh [$FF00+$49],a
 	ld a,$02
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$C200
 	ld bc,$0400
 	xor a
@@ -69108,7 +69388,7 @@ Logged_0x44E8D:
 	ldh [$FF00+$48],a
 	ldh [$FF00+$49],a
 	ld a,$0D
-	call Logged_0x0A96
+	call Load_Tileset
 	ld hl,$C580
 	ld de,$0021
 	call Logged_0x3795
