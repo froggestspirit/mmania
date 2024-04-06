@@ -10,5 +10,5 @@ compare: baserom.gb mm.gb
 	rgbasm -o $@ $<
 
 mm.gb: $(objects)
-	rgblink -p 0xFF -o $@ $^
+	rgblink -n mm.sym -m mm.map -p 0xFF -o $@ $^
 	rgbfix -p 0xFF -v $@

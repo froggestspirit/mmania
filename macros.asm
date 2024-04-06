@@ -1,10 +1,10 @@
-farcall: MACRO
+MACRO farcall
 	ld a, BANK(\1)
 	rst $10
 	call \1
 ENDM
 
-dbw: MACRO
+MACRO dbw
 	db BANK(\1)
 	dw \1
 ENDM
