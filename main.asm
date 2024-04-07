@@ -1162,7 +1162,7 @@ Unknown_0x07C0:
 	ld hl,$C181
 	xor a
 	ld c,$10
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
@@ -1283,7 +1283,7 @@ Unknown_0x0874:
 	ld hl,$C181
 	xor a
 	ld c,$10
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
@@ -1376,7 +1376,7 @@ Unknown_0x0901:
 	jr nz,Unknown_0x0901
 	ret
 
-Fill_RAM:
+Fill_RAM_Large:
 ; Fill RAM HL with A. BC as size
 	ld [hli],a
 	ld d,a
@@ -1384,13 +1384,14 @@ Fill_RAM:
 	ld a,b
 	or c
 	ld a,d
-	jr nz,Fill_RAM
+	jr nz,Fill_RAM_Large
 	ret
 
-Logged_0x091D:
+Fill_RAM:
+; Fill RAM HL with A. C as size
 	ld [hli],a
 	dec c
-	jr nz,Logged_0x091D
+	jr nz,Fill_RAM
 	ret
 
 Load_Data:
@@ -1549,7 +1550,7 @@ Logged_0x09C9:
 	ld hl,$9800
 	ld a,$01
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$48AA
 	pop af
 	ld d,$00
@@ -1766,13 +1767,13 @@ Logged_0x0AD2:
 	ld hl,$C200
 	ld bc,$0400
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 
 Logged_0x0ADC:
 	ld hl,$C000
 	ld c,$A0
 	xor a
-	jp Logged_0x091D
+	jp Fill_RAM
 
 Logged_0x0AE5:
 	call Logged_0x0B1B
@@ -4322,7 +4323,7 @@ Logged_0x19FF:
 	ld hl,$CA00
 	xor a
 	ld bc,$0240
-	call Fill_RAM
+	call Fill_RAM_Large
 	ldh a,[$FF00+$8C]
 	push af
 	ld a,$02
@@ -4752,15 +4753,15 @@ Logged_0x1D51:
 	ld hl,$C240
 	xor a
 	ld bc,$01C0
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C440
 	xor a
 	ld bc,$0120
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$CA00
 	xor a
 	ld bc,$0240
-	call Fill_RAM
+	call Fill_RAM_Large
 	xor a
 	ld [$C158],a
 	ld hl,$CE75
@@ -5390,7 +5391,7 @@ Logged_0x2036:
 	ld hl,$C9E7
 	xor a
 	ld c,$19
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	ld a,[$C9E4]
 	cp $08
@@ -5867,7 +5868,7 @@ Logged_0x22D5:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	ld a,[$CEB1]
 	ld e,a
@@ -6663,11 +6664,11 @@ Logged_0x2834:
 	ld hl,$9800
 	ld bc,$0400
 	ld a,$55
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9C00
 	ld bc,$0400
 	ld a,$54
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C0A7
 	res 1,[hl]
 	ld a,$04
@@ -6750,7 +6751,7 @@ Logged_0x28D3:
 	ld hl,$9C00
 	ld bc,$0400
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x19FF
 	ld a,[$CFDB]
 	call Logged_0x09C9
@@ -8139,7 +8140,7 @@ Logged_0x30A5:
 	jr z,Logged_0x30B6
 	ld c,a
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 
 Logged_0x30B6:
 	pop hl
@@ -8544,7 +8545,7 @@ Logged_0x3287:
 	ld hl,$C200
 	ld bc,$0400
 	xor a
-	jp Fill_RAM
+	jp Fill_RAM_Large
 
 Logged_0x3291:
 	ld hl,$C220
@@ -10413,19 +10414,19 @@ Logged_0x4000:
 	ld hl,$C000
 	ld bc,$00A0
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C0A0
 	ld bc,$11CD
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$D26D
 	ld bc,$04C6
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$DB00
 	ld bc,$0200
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop bc
 	pop hl
 	ld a,c
@@ -10434,7 +10435,7 @@ Logged_0x4000:
 	ld hl,$FF8A
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop af
 	ld [$C0A0],a
 	call Logged_0x05B4
@@ -10453,7 +10454,7 @@ Logged_0x404D:
 	ld hl,$9800
 	ld a,$80
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ei
@@ -10470,19 +10471,19 @@ Logged_0x404D:
 	ld hl,$C000
 	ld bc,$00A0
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C0A5
 	ld bc,$11C8
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$D26D
 	ld bc,$04C6
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$DB00
 	ld bc,$0200
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop bc
 	pop hl
 	ld a,c
@@ -10491,7 +10492,7 @@ Logged_0x404D:
 	ld hl,$FF8A
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop af
 	ld [$C0A0],a
 	call Logged_0x05B4
@@ -10606,11 +10607,11 @@ Logged_0x415F:
 	ld hl,$C240
 	ld bc,$01C0
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C440
 	ld bc,$01A0
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x3291
 	ld de,$D144
 	ld c,$20
@@ -10811,11 +10812,11 @@ Logged_0x42D3:
 	ld hl,$9800
 	ld a,$55
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9C00
 	ld a,$54
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,[$CFDD]
 	add a,a
 	ld c,a
@@ -11068,15 +11069,15 @@ Logged_0x450C:
 	ld hl,$C709
 	xor a
 	ld c,$C0
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$D18A
 	xor a
 	ld c,$80
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$D20A
 	xor a
 	ld c,$20
-	call Logged_0x091D
+	call Fill_RAM
 	ld bc,$0101
 	jp Logged_0x0AE5
 	call Logged_0x377F
@@ -11270,7 +11271,7 @@ Logged_0x4848:
 	ld hl,$D04A
 	xor a
 	ld c,$04
-	call Logged_0x091D
+	call Fill_RAM
 	ld de,$D032
 	ld hl,$D04A
 	ld c,$08
@@ -11536,7 +11537,7 @@ Logged_0x49BC:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	pop bc
 
@@ -11548,12 +11549,12 @@ Logged_0x49CB:
 	ld hl,$C440
 	ld bc,$0100
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x3069
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,[$D23B]
 	swap a
 	add a,$10
@@ -12404,15 +12405,15 @@ Logged_0x4F37:
 	ld hl,$D18A
 	xor a
 	ld c,$A0
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CEB7
 	xor a
 	ld c,$0A
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$D26D
 	ld bc,$04C6
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$D12B
 	res 1,[hl]
 	ld a,[$D12A]
@@ -12426,11 +12427,11 @@ Logged_0x4FA4:
 	ld hl,$9800
 	ld a,$01
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$CEB7
 	xor a
 	ld c,$0A
-	call Logged_0x091D
+	call Fill_RAM
 	ld [$C157],a
 	ld [$C156],a
 	ld [$CE74],a
@@ -12654,7 +12655,7 @@ Logged_0x5156:
 	ld hl,$9800
 	ld a,$55
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9800
 	ld de,$CA00
 	call Logged_0x28FE
@@ -13789,7 +13790,7 @@ Logged_0x59AF:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	push hl
 	ld a,$15
@@ -32268,7 +32269,7 @@ Logged_0x20089:
 	ld hl,$9800
 	ld a,$A2
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$C200
 	ld de,$41D0
 	ld bc,$3C10
@@ -32696,7 +32697,7 @@ Logged_0x203C1:
 	ld hl,$CE68
 	xor a
 	ld c,$08
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$03
 	ldh [$FF00+$90],a
 	xor a
@@ -32729,31 +32730,31 @@ Unknown_0x2045C:
 	ld hl,$CC42
 	xor a
 	ld c,$40
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CC82
 	xor a
 	ld bc,$0100
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$CD82
 	xor a
 	ld c,$40
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$04
 	ld [$CE52],a
 	ld hl,$CDC2
 	xor a
 	ld c,$80
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CE54
 	xor a
 	ld c,$04
-	call Logged_0x091D
+	call Fill_RAM
 	xor a
 	ld [$CE58],a
 	ld hl,$CE5D
 	xor a
 	ld c,$08
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$0A
 	ld [$0000],a
 	ld a,[$C1A2]
@@ -32765,7 +32766,7 @@ Unknown_0x2045C:
 	add hl,bc
 	ld bc,$0400
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,$00
 	ld [$0000],a
 	ld hl,$C9E4
@@ -33350,13 +33351,13 @@ Unknown_0x2082C:
 	push hl
 	ld bc,$0800
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop hl
 	ld bc,$1000
 	add hl,bc
 	ld bc,$0800
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,$00
 	ld [$0000],a
 	call Logged_0x20C43
@@ -33959,13 +33960,13 @@ Logged_0x20CD3:
 	push hl
 	ld bc,$0800
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop hl
 	ld bc,$1000
 	add hl,bc
 	ld bc,$0800
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	jp Logged_0x20DAA
 
 Unknown_0x20CEB:
@@ -34043,13 +34044,13 @@ Unknown_0x20D2E:
 	push bc
 	push hl
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop hl
 	ld bc,$1000
 	add hl,bc
 	pop bc
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop bc
 	pop hl
 	jr Logged_0x20D86
@@ -34597,7 +34598,7 @@ Logged_0x21095:
 	ld hl,$9800
 	ld a,$E1
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9800
 	ld de,$6B47
 	ld bc,$1214
@@ -34631,7 +34632,7 @@ Logged_0x2110F:
 	ld a,[$C9E6]
 	ld c,a
 	ld a,$DF
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	ld bc,$0020
 	add hl,bc
@@ -35456,7 +35457,7 @@ Logged_0x21710:
 	ld hl,$C127
 	xor a
 	ld c,$23
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$D8
 	ld [$C1A5],a
 	xor a
@@ -35477,7 +35478,7 @@ Logged_0x21710:
 	ld hl,$9800
 	xor a
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x3287
 	ld bc,$881C
 	ld de,$58DB
@@ -35925,7 +35926,7 @@ Logged_0x21AFB:
 	ld hl,$D00E
 	xor a
 	ld c,$0E
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$0D
 	ld [$C154],a
 	ret
@@ -36922,7 +36923,7 @@ Logged_0x22288:
 	ld hl,$9800
 	xor a
 	ld bc,$0400
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,$0A
 	ld [$C154],a
 	ld a,$06
@@ -37312,27 +37313,27 @@ Logged_0x22570:
 	ld hl,$CC42
 	xor a
 	ld c,$40
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CC82
 	xor a
 	ld bc,$0100
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$CD82
 	xor a
 	ld c,$40
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CDC2
 	xor a
 	ld c,$80
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$CE42
 	xor a
 	ld c,$10
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$C922
 	xor a
 	ld c,$C1
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,$0A
 	ld [$0000],a
 	ld a,[$C1A2]
@@ -37665,7 +37666,7 @@ Logged_0x22844:
 	ld hl,$D000
 	xor a
 	ld c,$BB
-	call Logged_0x091D
+	call Fill_RAM
 	ld a,[$D24B]
 	cp $08
 	ret nc
@@ -41813,7 +41814,7 @@ Logged_0x25A15:
 	ld hl,$C540
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$C540
 	ld a,$8A
 	ld [hli],a
@@ -42717,7 +42718,7 @@ Logged_0x2606F:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	push hl
 	ld a,$15
@@ -52764,7 +52765,7 @@ Logged_0x315E5:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	pop bc
 	ld a,$81
@@ -52967,7 +52968,7 @@ Logged_0x3169C:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	pop bc
 	push hl
@@ -55664,7 +55665,7 @@ Logged_0x3259F:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	push hl
 	ld a,$15
@@ -57464,7 +57465,7 @@ Unknown_0x330F2:
 	ld hl,$D179
 	xor a
 	ld c,$09
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$C235
 	res 3,[hl]
 	ld a,$03
@@ -68715,7 +68716,7 @@ Logged_0x4401B:
 	ld hl,$9800
 	ld bc,$0800
 	ld a,$03
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x45747
 	ld a,$0F
 	call Load_Tileset
@@ -68860,7 +68861,7 @@ Logged_0x44140:
 	ld hl,$9800
 	ld bc,$0400
 	ld a,$7E
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x3851
 	ld a,$29
 	call Load_Tileset
@@ -68949,7 +68950,7 @@ Logged_0x441FF:
 	ld hl,$9800
 	ld bc,$0400
 	ld a,$7E
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld a,[$D141]
 	bit 7,a
 	jr z,Logged_0x4424F
@@ -70401,7 +70402,7 @@ Logged_0x44BD1:
 	ld hl,$9800
 	ld bc,$0800
 	ld a,$03
-	call Fill_RAM
+	call Fill_RAM_Large
 	call Logged_0x45747
 	ld a,[$C9E4]
 	cp $07
@@ -70648,11 +70649,11 @@ Logged_0x44DA7:
 	ld hl,$C200
 	ld bc,$0400
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9800
 	ld bc,$0800
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	ld hl,$9800
 	ld de,$0000
 	call Logged_0x37A1
@@ -76648,7 +76649,7 @@ Logged_0x519CA:
 	push hl
 	ld c,$20
 	xor a
-	call Logged_0x091D
+	call Fill_RAM
 	pop hl
 	push hl
 	ld a,$17
@@ -77674,7 +77675,7 @@ Logged_0x5279C:
 	ld hl,$D129
 	ld bc,$0110
 	xor a
-	call Fill_RAM
+	call Fill_RAM_Large
 	pop af
 	ld [$D12C],a
 	ld hl,$727C
@@ -84712,7 +84713,7 @@ Logged_0x7B292:
 	ld hl,$CE88
 	xor a
 	ld c,$04
-	call Logged_0x091D
+	call Fill_RAM
 	ld hl,$72E8
 	ld de,$CE7C
 	ld c,$06
