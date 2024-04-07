@@ -43,34 +43,21 @@ SECTION "rst38", ROM0[$38]
 SECTION "vblankInt", ROM0[$40]
 	jp Logged_0x0331
 
-UnknownData_0x0043:
-INCBIN "baserom.gb", $0043, $0048 - $0043
-
 
 SECTION "lcdstatInt", ROM0[$48]
 	jp Logged_0x041D
 
-UnknownData_0x004B:
-INCBIN "baserom.gb", $004B, $0050 - $004B
-
 
 SECTION "timerInt", ROM0[$50]
-
-UnknownData_0x0050:
-INCBIN "baserom.gb", $0050, $0058 - $0050
+	jp UnknownData_0x0462
 
 
 SECTION "serialInt", ROM0[$58]
 	jp Logged_0x048D
 
-UnknownData_0x005B:
-INCBIN "baserom.gb", $005B, $0060 - $005B
-
 
 SECTION "joypadInt", ROM0[$60]
-
-UnknownData_0x0060:
-INCBIN "baserom.gb", $0060, $0100 - $0060
+	reti
 
 
 SECTION "start", ROM0[$100]
