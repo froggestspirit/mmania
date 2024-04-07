@@ -80067,10 +80067,7 @@ Tileset_0x05D580:
 INCBIN "gfx/tilesets/tileset_0x05D580.2bpp"  ; $05D580 - $05DD80
 
 Tileset_0x05DD80:
-INCBIN "gfx/tilesets/tileset_0x05DD80.2bpp"  ; $05DD80 - $05E180
-
-UnknownData_0x5E180:
-INCBIN "baserom.gb", $5E180, $5E280 - $5E180
+INCBIN "gfx/tilesets/tileset_0x05DD80.2bpp"  ; $05DD80 - $05E280
 
 Tileset_0x05E280:
 INCBIN "gfx/tilesets/tileset_0x05E280.2bpp"  ; $05E280 - $05EA80
