@@ -15931,6 +15931,14 @@ LoggedData_0x8C62:
 INCBIN "baserom.gb", $8C62, $8CDC - $8C62
 
 TilesetPointers:
+; 2-byte pointers to tileset headers
+; Tileset header format:
+;	db: number of chunks
+;	for each chunk:
+;		db: tileset bank
+;		dw: tileset address
+;		dw: load Destination
+;		dw: length of tileset data
 dw Tileset_00
 dw Tileset_01
 dw Tileset_02
