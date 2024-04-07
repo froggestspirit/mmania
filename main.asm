@@ -15869,10 +15869,13 @@ UnknownData_0x6C5D:
 INCBIN "baserom.gb", $6C5D, $6CFD - $6C5D
 
 LoggedData_0x6CFD:
-INCBIN "baserom.gb", $6CFD, $734D - $6CFD
+INCBIN "baserom.gb", $6CFD, $731D - $6CFD
 
-UnknownData_0x734D:
-INCBIN "baserom.gb", $734D, $7D30 - $734D
+Tileset_0x00731D:
+INCBIN "gfx/tilesets/tileset_0x00731D.2bpp"  ; $00731D - $00799D
+
+Tileset_0x00799D:
+INCBIN "gfx/tilesets/tileset_0x00799D.2bpp"  ; $00799D - $007D2D
 
 
 SECTION "Bank02", ROMX, BANK[$02]
@@ -15958,366 +15961,1650 @@ TilesetPointers:
 ;		dw: tileset address
 ;		dw: load Destination
 ;		dw: length of tileset data
-dw Tileset_00
-dw Tileset_01
-dw Tileset_02
-dw Tileset_03
-dw Tileset_04
-dw Tileset_05
-dw Tileset_06
-dw Tileset_07
-dw Tileset_08
-dw Tileset_09
-dw Tileset_0A
-dw Tileset_0B
-dw Tileset_0C
-dw Tileset_0D
-dw Tileset_0E
-dw Tileset_0F
-dw Tileset_10
-dw Tileset_11
-dw Tileset_12
-dw Tileset_13
-dw Tileset_14
-dw Tileset_15
-dw Tileset_16
-dw Tileset_17
-dw Tileset_18
-dw Tileset_19
-dw Tileset_1A
-dw Tileset_1B
-dw Tileset_1C
-dw Tileset_1D
-dw Tileset_1E
-dw Tileset_1F
-dw Tileset_20
-dw Tileset_21
-dw Tileset_22
-dw Tileset_23
-dw Tileset_24
-dw Tileset_25
-dw Tileset_26
-dw Tileset_27
-dw Tileset_28
-dw Tileset_29
-dw Tileset_2A
-dw Tileset_2B
-dw Tileset_2C
-dw Tileset_2D
-dw Tileset_2E
-dw Tileset_2F
-dw Tileset_30
-dw Tileset_31
-dw Tileset_32
-dw Tileset_33
-dw Tileset_34
-dw Tileset_35
-dw Tileset_36
-dw Tileset_37
-dw Tileset_38
-dw Tileset_39
-dw Tileset_3A
-dw Tileset_3B
-dw Tileset_3C
-dw Tileset_3D
-dw Tileset_3E
-dw Tileset_3F
-dw Tileset_40
-dw Tileset_41
-dw Tileset_42
-dw Tileset_43
-dw Tileset_44
-dw Tileset_45
-dw Tileset_46
-dw Tileset_47
-dw Tileset_48
-dw Tileset_49
-dw Tileset_4A
-dw Tileset_4B
-dw Tileset_4C
-dw Tileset_4D
-dw Tileset_4E
-dw Tileset_4F
-dw Tileset_50
-dw Tileset_51
-dw Tileset_52
-dw Tileset_53
-dw Tileset_54
-dw Tileset_55
-dw Tileset_56
-dw Tileset_57
-dw Tileset_58
-dw Tileset_59
-dw Tileset_5A
-dw Tileset_5B
-dw Tileset_5C
-dw Tileset_5D
-dw Tileset_5E
-dw Tileset_5F
-dw Tileset_60
-dw Tileset_61
-dw Tileset_62
-dw Tileset_63
-dw Tileset_64
-dw Tileset_65
-dw Tileset_66
-dw Tileset_67
+dw Tileset_00  ; 4DAC
+dw Tileset_01  ; 4DB4
+dw Tileset_01  ; 4DB4
+dw Tileset_03  ; 4DCA
+dw Tileset_04  ; 4DD2
+dw Tileset_05  ; 4E12
+dw Tileset_06  ; 4E52
+dw Tileset_07  ; 4E7D
+dw Tileset_08  ; 4EBD
+dw Tileset_09  ; 4EFD
+dw Tileset_0A  ; 4F28
+dw Tileset_0B  ; 4F37
+dw Tileset_0C  ; 4F4D
+dw Tileset_0D  ; 4F7F
+dw Tileset_0E  ; 4FA3
+dw Tileset_0F  ; 4FAB
+dw Tileset_10  ; 4FC1
+dw Tileset_11  ; 4FD0
+dw Tileset_12  ; 4FDF
+dw Tileset_13  ; 4FEE
+dw Tileset_14  ; 4FFD
+dw Tileset_15  ; 500C
+dw Tileset_16  ; 501B
+dw Tileset_17  ; 5031
+dw Tileset_18  ; 5047
+dw Tileset_19  ; 5064
+dw Tileset_1A  ; 5081
+dw Tileset_1B  ; 509E
+dw Tileset_1C  ; 50BB
+dw Tileset_1D  ; 50ED
+dw Tileset_1E  ; 5126
+dw Tileset_1F  ; 5143
+dw Tileset_20  ; 5160
+dw Tileset_21  ; 5184
+dw Tileset_22  ; 51A8
+dw Tileset_23  ; 51E1
+dw Tileset_24  ; 521A
+dw Tileset_25  ; 525A
+dw Tileset_26  ; 528C
+dw Tileset_27  ; 52A9
+dw Tileset_28  ; 52C6
+dw Tileset_29  ; 52D5
+dw Tileset_2A  ; 52F2
+dw Tileset_2B  ; 5301
+dw Tileset_2B  ; 5301
+dw Tileset_2B  ; 5301
+dw Tileset_2B  ; 5301
+dw Tileset_2F  ; 5317
+dw Tileset_30  ; 5334
+dw Tileset_31  ; 535F
+dw Tileset_32  ; 53A6
+dw Tileset_33  ; 53D8
+dw Tileset_34  ; 5418
+dw Tileset_35  ; 5427
+dw Tileset_36  ; 5436
+dw Tileset_37  ; 5445
+dw Tileset_38  ; 5454
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_39  ; 548D
+dw Tileset_49  ; 54BF
+dw Tileset_49  ; 54BF
+dw Tileset_49  ; 54BF
+dw Tileset_49  ; 54BF
+dw Tileset_4D  ; 54E3
+dw Tileset_49  ; 54BF
+dw Tileset_49  ; 54BF
+dw Tileset_50  ; 5523
+dw Tileset_51  ; 554E
+dw Tileset_51  ; 554E
+dw Tileset_51  ; 554E
+dw Tileset_51  ; 554E
+dw Tileset_55  ; 556B
+dw Tileset_51  ; 554E
+dw Tileset_51  ; 554E
+dw Tileset_58  ; 55A4
+dw Tileset_59  ; 55CF
+dw Tileset_5A  ; 5608
+dw Tileset_5B  ; 5641
+dw Tileset_5C  ; 567A
+dw Tileset_5D  ; 56CF
+dw Tileset_5E  ; 5724
+dw Tileset_5F  ; 575D
+dw Tileset_60  ; 578F
+dw Tileset_61  ; 57CF
+dw Tileset_62  ; 5816
+dw Tileset_63  ; 5872
+dw Tileset_64  ; 58CE
+dw Tileset_65  ; 5931
+dw Tileset_66  ; 5986
+dw Tileset_67  ; 59C6
+
 
 Tileset_00:
-INCBIN "baserom.gb", $8DAC, $8DB4 - $8DAC
+	db $01
+	dbw Tileset_0x010000
+	dw $8000
+	dw $1800
 
 Tileset_01:
-INCBIN "baserom.gb", $8DB4, $8DB4 - $8DB4
-
-Tileset_02:
-INCBIN "baserom.gb", $8DB4, $8DCA - $8DB4
+	db $03
+	dbw Tileset_0x06F800
+	dw $8000
+	dw $0070
+	dbw Tileset_0x01B000
+	dw $8800
+	dw $0800
+	dbw Tileset_0x01B800
+	dw $9000
+	dw $0800
 
 Tileset_03:
-INCBIN "baserom.gb", $8DCA, $8DD2 - $8DCA
+	db $01
+	dbw Tileset_0x07B860
+	dw $8800
+	dw $07A0
 
 Tileset_04:
-INCBIN "baserom.gb", $8DD2, $8E12 - $8DD2
+	db $09
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
+	dbw Tileset_0x07F8E0
+	dw $8140
+	dw $0140
+	dbw Tileset_0x07FA20
+	dw $8420
+	dw $00E0
+	dbw Tileset_0x07FB00
+	dw $89E0
+	dw $0090
 
 Tileset_05:
-INCBIN "baserom.gb", $8E12, $8E52 - $8E12
+	db $09
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
+	dbw Tileset_0x07FB90
+	dw $8140
+	dw $0120
+	dbw Tileset_0x07FCB0
+	dw $8420
+	dw $00E0
+	dbw Tileset_0x07FD90
+	dw $89C0
+	dw $00F0
 
 Tileset_06:
-INCBIN "baserom.gb", $8E52, $8E7D - $8E52
+	db $06
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
 
 Tileset_07:
-INCBIN "baserom.gb", $8E7D, $8EBD - $8E7D
+	db $09
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
+	dbw Tileset_0x07F8E0
+	dw $8140
+	dw $0140
+	dbw Tileset_0x07FA20
+	dw $8420
+	dw $00E0
+	dbw Tileset_0x07FB00
+	dw $89E0
+	dw $0090
 
 Tileset_08:
-INCBIN "baserom.gb", $8EBD, $8EFD - $8EBD
+	db $09
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
+	dbw Tileset_0x07FB90
+	dw $8140
+	dw $0120
+	dbw Tileset_0x07FCB0
+	dw $8420
+	dw $00E0
+	dbw Tileset_0x07FD90
+	dw $89C0
+	dw $00F0
 
 Tileset_09:
-INCBIN "baserom.gb", $8EFD, $8F28 - $8EFD
+	db $06
+	dbw Tileset_0x04B800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x077800
+	dw $8B90
+	dw $0470
+	dbw Tileset_0x077C70
+	dw $8800
+	dw $01C0
+	dbw Tileset_0x077E30
+	dw $8280
+	dw $01A0
+	dbw Tileset_0x07F800
+	dw $8060
+	dw $00E0
+	dbw Tileset_0x07B800
+	dw $8000
+	dw $0060
 
 Tileset_0A:
-INCBIN "baserom.gb", $8F28, $8F37 - $8F28
+	db $02
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x029000
+	dw $8800
+	dw $0800
 
 Tileset_0B:
-INCBIN "baserom.gb", $8F37, $8F4D - $8F37
+	db $03
+	dbw Tileset_0x067800
+	dw $8800
+	dw $0800
+	dbw Tileset_0x06F870
+	dw $9000
+	dw $0790
+	dbw Tileset_0x04FA30
+	dw $9790
+	dw $0040
 
 Tileset_0C:
-INCBIN "baserom.gb", $8F4D, $8F7F - $8F4D
+	db $07
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x062EE0
+	dw $8000
+	dw $04A0
+	dbw Tileset_0x063380
+	dw $84C0
+	dw $0040
+	dbw Tileset_0x04FA70
+	dw $8500
+	dw $0090
+	dbw Tileset_0x061F20
+	dw $8800
+	dw $03E0
+	dbw Tileset_0x062300
+	dw $8C20
+	dw $03E0
+	dbw Tileset_0x0626E0
+	dw $9000
+	dw $0800
 
 Tileset_0D:
-INCBIN "baserom.gb", $8F7F, $8FA3 - $8F7F
+	db $05
+	dbw Tileset_0x029800
+	dw $8000
+	dw $0170
+	dbw Tileset_0x063DE0
+	dw $8170
+	dw $0220
+	dbw Tileset_0x04FB00
+	dw $8390
+	dw $0040
+	dbw Tileset_0x029970
+	dw $8800
+	dw $0400
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
 
 Tileset_0E:
-INCBIN "baserom.gb", $8FA3, $8FAB - $8FA3
+	db $01
+	dbw Tileset_0x061800
+	dw $8800
+	dw $0620
 
 Tileset_0F:
-INCBIN "baserom.gb", $8FAB, $8FC1 - $8FAB
+	db $03
+	dbw Tileset_0x060000
+	dw $8000
+	dw $0800
+	dbw Tileset_0x060800
+	dw $8800
+	dw $0800
+	dbw Tileset_0x061000
+	dw $9000
+	dw $0800
 
 Tileset_10:
-INCBIN "baserom.gb", $8FC1, $8FD0 - $8FC1
+	db $02
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02AD60
+	dw $9000
+	dw $05B0
 
 Tileset_11:
-INCBIN "baserom.gb", $8FD0, $8FDF - $8FD0
+	db $02
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x02B690
+	dw $9050
+	dw $0600
 
 Tileset_12:
-INCBIN "baserom.gb", $8FDF, $8FEE - $8FDF
+	db $02
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x0560B0
+	dw $9050
+	dw $05E0
 
 Tileset_13:
-INCBIN "baserom.gb", $8FEE, $8FFD - $8FEE
+	db $02
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x0569B0
+	dw $9050
+	dw $0710
 
 Tileset_14:
-INCBIN "baserom.gb", $8FFD, $900C - $8FFD
+	db $02
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x057460
+	dw $9050
+	dw $05C0
 
 Tileset_15:
-INCBIN "baserom.gb", $900C, $901B - $900C
+	db $02
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x05C650
+	dw $9050
+	dw $0700
 
 Tileset_16:
-INCBIN "baserom.gb", $901B, $9031 - $901B
+	db $03
+	dbw Tileset_0x02B310
+	dw $9000
+	dw $0050
+	dbw Tileset_0x05D2E0
+	dw $9050
+	dw $02A0
+	dbw Tileset_0x02BC90
+	dw $92F0
+	dw $0370
 
 Tileset_17:
-INCBIN "baserom.gb", $9031, $9047 - $9031
+	db $03
+	dbw Tileset_0x05D580
+	dw $8000
+	dw $0800
+	dbw Tileset_0x05DD80
+	dw $8800
+	dw $0800
+	dbw Tileset_0x05E280
+	dw $9000
+	dw $0800
 
 Tileset_18:
-INCBIN "baserom.gb", $9047, $9064 - $9047
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0620
 
 Tileset_19:
-INCBIN "baserom.gb", $9064, $9081 - $9064
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
 
 Tileset_1A:
-INCBIN "baserom.gb", $9081, $909E - $9081
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x013040
+	dw $89E0
+	dw $05A0
 
 Tileset_1B:
-INCBIN "baserom.gb", $909E, $90BB - $909E
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054000
+	dw $8940
+	dw $0640
 
 Tileset_1C:
-INCBIN "baserom.gb", $90BB, $90ED - $90BB
+	db $07
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054640
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_1D:
-INCBIN "baserom.gb", $90ED, $9126 - $90ED
+	db $08
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054BE0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_1E:
-INCBIN "baserom.gb", $9126, $9143 - $9126
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055180
+	dw $89E0
+	dw $05A0
 
 Tileset_1F:
-INCBIN "baserom.gb", $9143, $9160 - $9143
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
 
 Tileset_20:
-INCBIN "baserom.gb", $9160, $9184 - $9160
+	db $05
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0620
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
 
 Tileset_21:
-INCBIN "baserom.gb", $9184, $91A8 - $9184
+	db $05
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x013040
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F3F0
+	dw $8B80
+	dw $0180
 
 Tileset_22:
-INCBIN "baserom.gb", $91A8, $91E1 - $91A8
+	db $08
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F570
+	dw $8B80
+	dw $0180
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_23:
-INCBIN "baserom.gb", $91E1, $921A - $91E1
+	db $08
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
 
 Tileset_24:
-INCBIN "baserom.gb", $921A, $925A - $921A
+	db $09
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054BE0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
 
 Tileset_25:
-INCBIN "baserom.gb", $925A, $928C - $925A
+	db $07
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055180
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_26:
-INCBIN "baserom.gb", $928C, $92A9 - $928C
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054640
+	dw $89E0
+	dw $05A0
 
 Tileset_27:
-INCBIN "baserom.gb", $92A9, $92C6 - $92A9
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x063630
+	dw $89E0
+	dw $05A0
 
 Tileset_28:
-INCBIN "baserom.gb", $92C6, $92D5 - $92C6
+	db $02
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x029D70
+	dw $8800
+	dw $0800
 
 Tileset_29:
-INCBIN "baserom.gb", $92D5, $92F2 - $92D5
+	db $04
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x057C10
+	dw $8800
+	dw $03F0
+	dbw Tileset_0x077FD0
+	dw $8BF0
+	dw $0030
+	dbw Tileset_0x063CB0
+	dw $8C20
+	dw $00F0
 
 Tileset_2A:
-INCBIN "baserom.gb", $92F2, $9301 - $92F2
+	db $02
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x06F000
+	dw $8800
+	dw $0800
 
 Tileset_2B:
-Tileset_2C:
-Tileset_2D:
-Tileset_2E:
-INCBIN "baserom.gb", $9301, $9317 - $9301
+	db $03
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
 
 Tileset_2F:
-INCBIN "baserom.gb", $9317, $9334 - $9317
+	db $04
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
+	dbw Tileset_0x055D80
+	dw $8A20
+	dw $0330
 
 Tileset_30:
-INCBIN "baserom.gb", $9334, $935F - $9334
+	db $06
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
+	dbw Tileset_0x055D80
+	dw $8A20
+	dw $0330
+	dbw Tileset_0x056690
+	dw $8C30
+	dw $0060
+	dbw Tileset_0x0566F0
+	dw $8D50
+	dw $02C0
 
 Tileset_31:
-INCBIN "baserom.gb", $935F, $93A6 - $935F
+	db $0A
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
+	dbw Tileset_0x055D80
+	dw $8A20
+	dw $0330
+	dbw Tileset_0x056690
+	dw $8C30
+	dw $0060
+	dbw Tileset_0x0566F0
+	dw $8D50
+	dw $02B0
+	dbw Tileset_0x0570C0
+	dw $8700
+	dw $0070
+	dbw Tileset_0x057130
+	dw $8800
+	dw $0070
+	dbw Tileset_0x0571A0
+	dw $8900
+	dw $0070
+	dbw Tileset_0x057210
+	dw $8A00
+	dw $0250
 
 Tileset_32:
-INCBIN "baserom.gb", $93A6, $93D8 - $93A6
+	db $07
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
+	dbw Tileset_0x055D80
+	dw $8A20
+	dw $0330
+	dbw Tileset_0x056690
+	dw $8C30
+	dw $0060
+	dbw Tileset_0x0566F0
+	dw $8D50
+	dw $02C0
+	dbw Tileset_0x05C000
+	dw $8830
+	dw $0460
 
 Tileset_33:
-INCBIN "baserom.gb", $93D8, $9418 - $93D8
+	db $09
+	dbw Tileset_0x02A570
+	dw $8000
+	dw $06F0
+	dbw Tileset_0x02B360
+	dw $86F0
+	dw $0110
+	dbw Tileset_0x02B470
+	dw $8800
+	dw $0220
+	dbw Tileset_0x055D80
+	dw $8A20
+	dw $0330
+	dbw Tileset_0x056690
+	dw $8C30
+	dw $0060
+	dbw Tileset_0x0566F0
+	dw $8D50
+	dw $02B0
+	dbw Tileset_0x05C460
+	dw $8E00
+	dw $01F0
+	dbw Tileset_0x05CD50
+	dw $8700
+	dw $0100
+	dbw Tileset_0x05CE50
+	dw $8800
+	dw $0490
 
 Tileset_34:
-INCBIN "baserom.gb", $9418, $9427 - $9418
+	db $02
+	dbw Tileset_0x00731D
+	dw $9000
+	dw $0680
+	dbw Tileset_0x00799D
+	dw $8C70
+	dw $0390
 
 Tileset_35:
-INCBIN "baserom.gb", $9427, $9436 - $9427
+	db $02
+	dbw Tileset_0x05EF00
+	dw $9000
+	dw $0620
+	dbw Tileset_0x05F520
+	dw $8EE0
+	dw $0120
 
 Tileset_36:
-INCBIN "baserom.gb", $9436, $9445 - $9436
+	db $02
+	dbw Tileset_0x05F640
+	dw $9000
+	dw $0690
+	dbw Tileset_0x05FCD0
+	dw $8FD0
+	dw $0030
 
 Tileset_37:
-INCBIN "baserom.gb", $9445, $9454 - $9445
+	db $02
+	dbw Tileset_0x028800
+	dw $9000
+	dw $0800
+	dbw Tileset_0x057A20
+	dw $8800
+	dw $01F0
 
 Tileset_38:
-INCBIN "baserom.gb", $9454, $948D - $9454
+	db $08
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x013AE0
+	dw $8800
+	dw $0170
+	dbw Tileset_0x013C50
+	dw $89E0
+	dw $0380
+	dbw Tileset_0x07FEC0
+	dw $8D60
+	dw $0140
+	dbw Tileset_0x063BD0
+	dw $8FA0
+	dw $00E0
 
 Tileset_39:
-Tileset_3A:
-Tileset_3B:
-Tileset_3C:
-Tileset_3D:
-Tileset_3E:
-Tileset_3F:
-Tileset_40:
-Tileset_41:
-Tileset_42:
-Tileset_43:
-Tileset_44:
-Tileset_45:
-Tileset_46:
-Tileset_47:
-Tileset_48:
-INCBIN "baserom.gb", $948D, $94BF - $948D
+	db $07
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0040
+	dbw Tileset_0x07FE80
+	dw $89A0
+	dw $0040
 
 Tileset_49:
-Tileset_4A:
-Tileset_4B:
-Tileset_4C:
-Tileset_4E:
-Tileset_4F:
-INCBIN "baserom.gb", $94BF, $94E3 - $94BF
+	db $05
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
 
 Tileset_4D:
-INCBIN "baserom.gb", $94E3, $9523 - $94E3
+	db $09
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_50:
-INCBIN "baserom.gb", $9523, $954E - $9523
+	db $06
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0040
+	dbw Tileset_0x07FE80
+	dw $89A0
+	dw $0040
 
 Tileset_51:
-Tileset_52:
-Tileset_53:
-Tileset_54:
-Tileset_56:
-Tileset_57:
-INCBIN "baserom.gb", $954E, $956B - $954E
+	db $04
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
 
 Tileset_55:
-INCBIN "baserom.gb", $956B, $95A4 - $956B
+	db $08
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $00C0
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
 
 Tileset_58:
-INCBIN "baserom.gb", $95A4, $95CF - $95A4
+	db $06
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0620
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
 
 Tileset_59:
-INCBIN "baserom.gb", $95CF, $9608 - $95CF
+	db $08
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F7B0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_5A:
-INCBIN "baserom.gb", $9608, $9641 - $9608
+	db $08
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x013040
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_5B:
-INCBIN "baserom.gb", $9641, $967A - $9641
+	db $08
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054000
+	dw $8940
+	dw $0640
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F870
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_5C:
-INCBIN "baserom.gb", $967A, $96CF - $967A
+	db $0C
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054640
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F6F0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
 
 Tileset_5D:
-INCBIN "baserom.gb", $96CF, $9724 - $96CF
+	db $0C
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054BE0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F7B0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_5E:
-INCBIN "baserom.gb", $9724, $975D - $9724
+	db $08
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055180
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
 
 Tileset_5F:
-INCBIN "baserom.gb", $975D, $978F - $975D
+	db $07
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055720
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0040
+	dbw Tileset_0x07FE80
+	dw $89A0
+	dw $0040
 
 Tileset_60:
-INCBIN "baserom.gb", $978F, $97CF - $978F
+	db $09
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012480
+	dw $8960
+	dw $0620
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_61:
-INCBIN "baserom.gb", $97CF, $9816 - $97CF
+	db $0A
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x013040
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F3F0
+	dw $8B80
+	dw $0180
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F7B0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F870
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
 
 Tileset_62:
-INCBIN "baserom.gb", $9816, $9872 - $9816
+	db $0D
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F570
+	dw $8B80
+	dw $0180
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F7B0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F870
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_63:
-INCBIN "baserom.gb", $9872, $98CE - $9872
+	db $0D
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x012AA0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F7B0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F870
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x013880
+	dw $82A0
+	dw $0160
 
 Tileset_64:
-INCBIN "baserom.gb", $98CE, $9931 - $98CE
+	db $0E
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054BE0
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x04F9F0
+	dw $89A0
+	dw $0040
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x04F370
+	dw $8A00
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
+	dbw Tileset_0x04F6F0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F870
+	dw $80C0
+	dw $00C0
 
 Tileset_65:
-INCBIN "baserom.gb", $9931, $9986 - $9931
+	db $0C
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x055180
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x063DA0
+	dw $8F80
+	dw $0040
+	dbw Tileset_0x055CC0
+	dw $8FC0
+	dw $0040
+	dbw Tileset_0x055D00
+	dw $9000
+	dw $0080
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F6F0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
 
 Tileset_66:
-INCBIN "baserom.gb", $9986, $99C6 - $9986
+	db $09
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x054640
+	dw $89E0
+	dw $05A0
+	dbw Tileset_0x0135E0
+	dw $8000
+	dw $02A0
+	dbw Tileset_0x04F6F0
+	dw $8000
+	dw $00C0
+	dbw Tileset_0x04F930
+	dw $80C0
+	dw $00C0
+	dbw Tileset_0x0139E0
+	dw $82A0
+	dw $0100
 
 Tileset_67:
-INCBIN "baserom.gb", $99C6, $99F1 - $99C6 ; Todo get actual size
+	db $06
+	dbw Tileset_0x011800
+	dw $8400
+	dw $0300
+	dbw Tileset_0x011B00
+	dw $8800
+	dw $0100
+	dbw Tileset_0x011C00
+	dw $8F80
+	dw $0080
+	dbw Tileset_0x011C80
+	dw $9000
+	dw $0800
+	dbw Tileset_0x0633C0
+	dw $8000
+	dw $0270
+	dbw Tileset_0x063630
+	dw $89E0
+	dw $05A0
 
 UnknownData_0x99F1:
 INCBIN "baserom.gb", $99F1, $99F3 - $99F1
@@ -27314,8 +28601,44 @@ INCBIN "baserom.gb", $F76A, $F87A - $F76A
 
 SECTION "Bank04", ROMX, BANK[$04]
 
-LoggedData_0x10000:
-INCBIN "baserom.gb", $10000, $13FD0 - $10000
+Tileset_0x010000:
+INCBIN "gfx/tilesets/tileset_0x010000.2bpp"  ; $010000 - $011800
+
+Tileset_0x011800:
+INCBIN "gfx/tilesets/tileset_0x011800.2bpp"  ; $011800 - $011B00
+
+Tileset_0x011B00:
+INCBIN "gfx/tilesets/tileset_0x011B00.2bpp"  ; $011B00 - $011C00
+
+Tileset_0x011C00:
+INCBIN "gfx/tilesets/tileset_0x011C00.2bpp"  ; $011C00 - $011C80
+
+Tileset_0x011C80:
+INCBIN "gfx/tilesets/tileset_0x011C80.2bpp"  ; $011C80 - $012480
+
+Tileset_0x012480:
+INCBIN "gfx/tilesets/tileset_0x012480.2bpp"  ; $012480 - $012AA0
+
+Tileset_0x012AA0:
+INCBIN "gfx/tilesets/tileset_0x012AA0.2bpp"  ; $012AA0 - $013040
+
+Tileset_0x013040:
+INCBIN "gfx/tilesets/tileset_0x013040.2bpp"  ; $013040 - $0135E0
+
+Tileset_0x0135E0:
+INCBIN "gfx/tilesets/tileset_0x0135E0.2bpp"  ; $0135E0 - $013880
+
+Tileset_0x013880:
+INCBIN "gfx/tilesets/tileset_0x013880.2bpp"  ; $013880 - $0139E0
+
+Tileset_0x0139E0:
+INCBIN "gfx/tilesets/tileset_0x0139E0.2bpp"  ; $0139E0 - $013AE0
+
+Tileset_0x013AE0:
+INCBIN "gfx/tilesets/tileset_0x013AE0.2bpp"  ; $013AE0 - $013C50
+
+Tileset_0x013C50:
+INCBIN "gfx/tilesets/tileset_0x013C50.2bpp"  ; $013C50 - $013FD0
 
 
 SECTION "Bank05", ROMX, BANK[$05]
@@ -27695,8 +29018,11 @@ INCBIN "baserom.gb", $1AC8C, $1AE92 - $1AC8C
 UnknownData_0x1AE92:
 INCBIN "baserom.gb", $1AE92, $1B000 - $1AE92 ; Freespace?
 
-LoggedData_0x1B000:
-INCBIN "baserom.gb", $1B000, $1C000 - $1B000
+Tileset_0x01B000:
+INCBIN "gfx/tilesets/tileset_0x01B000.2bpp"  ; $01B000 - $01B800
+
+Tileset_0x01B800:
+INCBIN "gfx/tilesets/tileset_0x01B800.2bpp"  ; $01B800 - $01C000
 
 
 SECTION "Bank07", ROMX, BANK[$07]
@@ -44079,14 +45405,44 @@ INCBIN "baserom.gb", $28754, $28780 - $28754
 UnknownData_0x28780:
 INCBIN "baserom.gb", $28780, $28800 - $28780
 
-LoggedData_0x28800:
-INCBIN "baserom.gb", $28800, $2AC60 - $28800
+Tileset_0x028800:
+INCBIN "gfx/tilesets/tileset_0x028800.2bpp"  ; $028800 - $029000
+
+Tileset_0x029000:
+INCBIN "gfx/tilesets/tileset_0x029000.2bpp"  ; $029000 - $029800
+
+Tileset_0x029800:
+INCBIN "gfx/tilesets/tileset_0x029800.2bpp"  ; $029800 - $029970
+
+Tileset_0x029970:
+INCBIN "gfx/tilesets/tileset_0x029970.2bpp"  ; $029970 - $029D70
+
+Tileset_0x029D70:
+INCBIN "gfx/tilesets/tileset_0x029D70.2bpp"  ; $029D70 - $02A570
+
+Tileset_0x02A570:
+INCBIN "gfx/tilesets/tileset_0x02A570.2bpp"  ; $02A570 - $02AC60
 
 UnknownData_0x2AC60:
 INCBIN "baserom.gb", $2AC60, $2AD60 - $2AC60
 
-LoggedData_0x2AD60:
-INCBIN "baserom.gb", $2AD60, $2C000 - $2AD60
+Tileset_0x02AD60:
+INCBIN "gfx/tilesets/tileset_0x02AD60.2bpp"  ; $02AD60 - $02B310
+
+Tileset_0x02B310:
+INCBIN "gfx/tilesets/tileset_0x02B310.2bpp"  ; $02B310 - $02B360
+
+Tileset_0x02B360:
+INCBIN "gfx/tilesets/tileset_0x02B360.2bpp"  ; $02B360 - $02B470
+
+Tileset_0x02B470:
+INCBIN "gfx/tilesets/tileset_0x02B470.2bpp"  ; $02B470 - $02B690
+
+Tileset_0x02B690:
+INCBIN "gfx/tilesets/tileset_0x02B690.2bpp"  ; $02B690 - $02BC90
+
+Tileset_0x02BC90:
+INCBIN "gfx/tilesets/tileset_0x02BC90.2bpp"  ; $02BC90 - $02C000
 
 
 SECTION "Bank0B", ROMX, BANK[$0B]
@@ -71266,7 +72622,10 @@ LoggedData_0x4AA99:
 INCBIN "baserom.gb", $4AA99, $4ABD2 - $4AA99
 
 UnknownData_0x4ABD2:
-INCBIN "baserom.gb", $4ABD2, $4C000 - $4ABD2
+INCBIN "baserom.gb", $4ABD2, $4B800 - $4ABD2
+
+Tileset_0x04B800:
+INCBIN "gfx/tilesets/tileset_0x04B800.2bpp"  ; $04B800 - $04C000
 
 
 SECTION "Bank13", ROMX, BANK[$13]
@@ -71278,13 +72637,40 @@ UnknownData_0x4D260:
 INCBIN "baserom.gb", $4D260, $4D2E0 - $4D260
 
 LoggedData_0x4D2E0:
-INCBIN "baserom.gb", $4D2E0, $4FA30 - $4D2E0
+INCBIN "baserom.gb", $4D2E0, $4F370 - $4D2E0
 
-UnknownData_0x4FA30:
-INCBIN "baserom.gb", $4FA30, $4FA70 - $4FA30
+Tileset_0x04F370:
+INCBIN "gfx/tilesets/tileset_0x04F370.2bpp"  ; $04F370 - $04F3F0
 
-LoggedData_0x4FA70:
-INCBIN "baserom.gb", $4FA70, $4FB40 - $4FA70
+Tileset_0x04F3F0:
+INCBIN "gfx/tilesets/tileset_0x04F3F0.2bpp"  ; $04F3F0 - $04F570
+
+Tileset_0x04F570:
+INCBIN "gfx/tilesets/tileset_0x04F570.2bpp"  ; $04F570 - $04F6F0
+
+Tileset_0x04F6F0:
+INCBIN "gfx/tilesets/tileset_0x04F6F0.2bpp"  ; $04F6F0 - $04F7B0
+
+Tileset_0x04F7B0:
+INCBIN "gfx/tilesets/tileset_0x04F7B0.2bpp"  ; $04F7B0 - $04F870
+
+Tileset_0x04F870:
+INCBIN "gfx/tilesets/tileset_0x04F870.2bpp"  ; $04F870 - $04F930
+
+Tileset_0x04F930:
+INCBIN "gfx/tilesets/tileset_0x04F930.2bpp"  ; $04F930 - $04F9F0
+
+Tileset_0x04F9F0:
+INCBIN "gfx/tilesets/tileset_0x04F9F0.2bpp"  ; $04F9F0 - $04FA30
+
+Tileset_0x04FA30:
+INCBIN "gfx/tilesets/tileset_0x04FA30.2bpp"  ; $04FA30 - $04FA70
+
+Tileset_0x04FA70:
+INCBIN "gfx/tilesets/tileset_0x04FA70.2bpp"  ; $04FA70 - $04FB00
+
+Tileset_0x04FB00:
+INCBIN "gfx/tilesets/tileset_0x04FB00.2bpp"  ; $04FB00 - $04FB40
 
 
 SECTION "Bank14", ROMX, BANK[$14]
@@ -78461,14 +79847,62 @@ INCBIN "baserom.gb", $53FE6, $54000 - $53FE6
 
 SECTION "Bank15", ROMX, BANK[$15]
 
-LoggedData_0x54000:
-INCBIN "baserom.gb", $54000, $57A20 - $54000
+Tileset_0x054000:
+INCBIN "gfx/tilesets/tileset_0x054000.2bpp"  ; $054000 - $054640
 
-UnknownData_0x57A20:
-INCBIN "baserom.gb", $57A20, $57C10 - $57A20
+Tileset_0x054640:
+INCBIN "gfx/tilesets/tileset_0x054640.2bpp"  ; $054640 - $054BE0
 
-LoggedData_0x57C10:
-INCBIN "baserom.gb", $57C10, $58000 - $57C10
+Tileset_0x054BE0:
+INCBIN "gfx/tilesets/tileset_0x054BE0.2bpp"  ; $054BE0 - $055180
+
+Tileset_0x055180:
+INCBIN "gfx/tilesets/tileset_0x055180.2bpp"  ; $055180 - $055720
+
+Tileset_0x055720:
+INCBIN "gfx/tilesets/tileset_0x055720.2bpp"  ; $055720 - $055CC0
+
+Tileset_0x055CC0:
+INCBIN "gfx/tilesets/tileset_0x055CC0.2bpp"  ; $055CC0 - $055D00
+
+Tileset_0x055D00:
+INCBIN "gfx/tilesets/tileset_0x055D00.2bpp"  ; $055D00 - $055D80
+
+Tileset_0x055D80:
+INCBIN "gfx/tilesets/tileset_0x055D80.2bpp"  ; $055D80 - $0560B0
+
+Tileset_0x0560B0:
+INCBIN "gfx/tilesets/tileset_0x0560B0.2bpp"  ; $0560B0 - $056690
+
+Tileset_0x056690:
+INCBIN "gfx/tilesets/tileset_0x056690.2bpp"  ; $056690 - $0566F0
+
+Tileset_0x0566F0:
+INCBIN "gfx/tilesets/tileset_0x0566F0.2bpp"  ; $0566F0 - $0569B0
+
+Tileset_0x0569B0:
+INCBIN "gfx/tilesets/tileset_0x0569B0.2bpp"  ; $0569B0 - $0570C0
+
+Tileset_0x0570C0:
+INCBIN "gfx/tilesets/tileset_0x0570C0.2bpp"  ; $0570C0 - $057130
+
+Tileset_0x057130:
+INCBIN "gfx/tilesets/tileset_0x057130.2bpp"  ; $057130 - $0571A0
+
+Tileset_0x0571A0:
+INCBIN "gfx/tilesets/tileset_0x0571A0.2bpp"  ; $0571A0 - $057210
+
+Tileset_0x057210:
+INCBIN "gfx/tilesets/tileset_0x057210.2bpp"  ; $057210 - $057460
+
+Tileset_0x057460:
+INCBIN "gfx/tilesets/tileset_0x057460.2bpp"  ; $057460 - $057A20
+
+Tileset_0x057A20:
+INCBIN "gfx/tilesets/tileset_0x057A20.2bpp"  ; $057A20 - $057C10
+
+Tileset_0x057C10:
+INCBIN "gfx/tilesets/tileset_0x057C10.2bpp"  ; $057C10 - $058000
 
 
 SECTION "Bank16", ROMX, BANK[$16]
@@ -78611,23 +80045,101 @@ INCBIN "baserom.gb", $59A11, $59A95 - $59A11
 
 SECTION "Bank17", ROMX, BANK[$17]
 
-LoggedData_0x5C000:
-INCBIN "baserom.gb", $5C000, $5EF00 - $5C000
+Tileset_0x05C000:
+INCBIN "gfx/tilesets/tileset_0x05C000.2bpp"  ; $05C000 - $05C460
 
-UnknownData_0x5EF00:
-INCBIN "baserom.gb", $5EF00, $5FD00 - $5EF00
+Tileset_0x05C460:
+INCBIN "gfx/tilesets/tileset_0x05C460.2bpp"  ; $05C460 - $05C650
+
+Tileset_0x05C650:
+INCBIN "gfx/tilesets/tileset_0x05C650.2bpp"  ; $05C650 - $05CD50
+
+Tileset_0x05CD50:
+INCBIN "gfx/tilesets/tileset_0x05CD50.2bpp"  ; $05CD50 - $05CE50
+
+Tileset_0x05CE50:
+INCBIN "gfx/tilesets/tileset_0x05CE50.2bpp"  ; $05CE50 - $05D2E0
+
+Tileset_0x05D2E0:
+INCBIN "gfx/tilesets/tileset_0x05D2E0.2bpp"  ; $05D2E0 - $05D580
+
+Tileset_0x05D580:
+INCBIN "gfx/tilesets/tileset_0x05D580.2bpp"  ; $05D580 - $05DD80
+
+Tileset_0x05DD80:
+INCBIN "gfx/tilesets/tileset_0x05DD80.2bpp"  ; $05DD80 - $05E180
+
+UnknownData_0x5E180:
+INCBIN "baserom.gb", $5E180, $5E280 - $5E180
+
+Tileset_0x05E280:
+INCBIN "gfx/tilesets/tileset_0x05E280.2bpp"  ; $05E280 - $05EA80
+
+UnknownData_0x5EA80:
+INCBIN "baserom.gb", $5EA80, $5EF00 - $5EA80
+
+Tileset_0x05EF00:
+INCBIN "gfx/tilesets/tileset_0x05EF00.2bpp"  ; $05EF00 - $05F520
+
+Tileset_0x05F520:
+INCBIN "gfx/tilesets/tileset_0x05F520.2bpp"  ; $05F520 - $05F640
+
+Tileset_0x05F640:
+INCBIN "gfx/tilesets/tileset_0x05F640.2bpp"  ; $05F640 - $05FCD0
+
+Tileset_0x05FCD0:
+INCBIN "gfx/tilesets/tileset_0x05FCD0.2bpp"  ; $05FCD0 - $05FD00
 
 
 SECTION "Bank18", ROMX, BANK[$18]
 
-LoggedData_0x60000:
-INCBIN "baserom.gb", $60000, $61E20 - $60000
+Tileset_0x060000:
+INCBIN "gfx/tilesets/tileset_0x060000.2bpp"  ; $060000 - $060800
+
+Tileset_0x060800:
+INCBIN "gfx/tilesets/tileset_0x060800.2bpp"  ; $060800 - $061000
+
+Tileset_0x061000:
+INCBIN "gfx/tilesets/tileset_0x061000.2bpp"  ; $061000 - $061800
+
+Tileset_0x061800:
+INCBIN "gfx/tilesets/tileset_0x061800.2bpp"  ; $061800 - $061E20
 
 UnknownData_0x61E20:
 INCBIN "baserom.gb", $61E20, $61F20 - $61E20
 
-LoggedData_0x61F20:
-INCBIN "baserom.gb", $61F20, $64000 - $61F20
+Tileset_0x061F20:
+INCBIN "gfx/tilesets/tileset_0x061F20.2bpp"  ; $061F20 - $062300
+
+Tileset_0x062300:
+INCBIN "gfx/tilesets/tileset_0x062300.2bpp"  ; $062300 - $0626E0
+
+Tileset_0x0626E0:
+INCBIN "gfx/tilesets/tileset_0x0626E0.2bpp"  ; $0626E0 - $062EE0
+
+Tileset_0x062EE0:
+INCBIN "gfx/tilesets/tileset_0x062EE0.2bpp"  ; $062EE0 - $063380
+
+Tileset_0x063380:
+INCBIN "gfx/tilesets/tileset_0x063380.2bpp"  ; $063380 - $0633C0
+
+Tileset_0x0633C0:
+INCBIN "gfx/tilesets/tileset_0x0633C0.2bpp"  ; $0633C0 - $063630
+
+Tileset_0x063630:
+INCBIN "gfx/tilesets/tileset_0x063630.2bpp"  ; $063630 - $063BD0
+
+Tileset_0x063BD0:
+INCBIN "gfx/tilesets/tileset_0x063BD0.2bpp"  ; $063BD0 - $063CB0
+
+Tileset_0x063CB0:
+INCBIN "gfx/tilesets/tileset_0x063CB0.2bpp"  ; $063CB0 - $063DA0
+
+Tileset_0x063DA0:
+INCBIN "gfx/tilesets/tileset_0x063DA0.2bpp"  ; $063DA0 - $063DE0
+
+Tileset_0x063DE0:
+INCBIN "gfx/tilesets/tileset_0x063DE0.2bpp"  ; $063DE0 - $064000
 
 
 SECTION "Bank19", ROMX, BANK[$19]
@@ -79080,7 +80592,10 @@ LoggedData_0x6771A:
 INCBIN "baserom.gb", $6771A, $67740 - $6771A
 
 UnknownData_0x67740:
-INCBIN "baserom.gb", $67740, $68000 - $67740
+INCBIN "baserom.gb", $67740, $67800 - $67740
+
+Tileset_0x067800:
+INCBIN "gfx/tilesets/tileset_0x067800.2bpp"  ; $067800 - $068000
 
 
 SECTION "Bank1A", ROMX, BANK[$1A]
@@ -82380,11 +83895,14 @@ INCBIN "baserom.gb", $6E99C, $6EE5A - $6E99C
 UnknownData_0x6EE5A:
 INCBIN "baserom.gb", $6EE5A, $6F000 - $6EE5A
 
-LoggedData_0x6F000:
-INCBIN "baserom.gb", $6F000, $6F870 - $6F000
+Tileset_0x06F000:
+INCBIN "gfx/tilesets/tileset_0x06F000.2bpp"  ; $06F000 - $06F800
 
-UnknownData_0x6F870:
-INCBIN "baserom.gb", $6F870, $70000 - $6F870
+Tileset_0x06F800:
+INCBIN "gfx/tilesets/tileset_0x06F800.2bpp"  ; $06F800 - $06F870
+
+Tileset_0x06F870:
+INCBIN "gfx/tilesets/tileset_0x06F870.2bpp"  ; $06F870 - $070000
 
 
 SECTION "Bank1C", ROMX, BANK[$1C]
@@ -82669,10 +84187,19 @@ LoggedData_0x7718C:
 INCBIN "baserom.gb", $7718C, $77723 - $7718C
 
 UnknownData_0x77723:
-INCBIN "baserom.gb", $77723, $77FD0 - $77723
+INCBIN "baserom.gb", $77723, $77800 - $77723
 
-LoggedData_0x77FD0:
-INCBIN "baserom.gb", $77FD0, $78000 - $77FD0
+Tileset_0x077800:
+INCBIN "gfx/tilesets/tileset_0x077800.2bpp"  ; $077800 - $077C70
+
+Tileset_0x077C70:
+INCBIN "gfx/tilesets/tileset_0x077C70.2bpp"  ; $077C70 - $077E30
+
+Tileset_0x077E30:
+INCBIN "gfx/tilesets/tileset_0x077E30.2bpp"  ; $077E30 - $077FD0
+
+Tileset_0x077FD0:
+INCBIN "gfx/tilesets/tileset_0x077FD0.2bpp"  ; $077FD0 - $078000
 
 
 SECTION "Bank1E", ROMX, BANK[$1E]
@@ -83930,10 +85457,13 @@ Logged_0x7B787:
 	ret
 
 UnknownData_0x7B788:
-INCBIN "baserom.gb", $7B788, $7B860 - $7B788
+INCBIN "baserom.gb", $7B788, $7B800 - $7B788
 
-LoggedData_0x7B860:
-INCBIN "baserom.gb", $7B860, $7C000 - $7B860
+Tileset_0x07B800:
+INCBIN "gfx/tilesets/tileset_0x07B800.2bpp"  ; $07B800 - $07B860
+
+Tileset_0x07B860:
+INCBIN "gfx/tilesets/tileset_0x07B860.2bpp"  ; $07B860 - $07C000
 
 
 SECTION "Bank1F", ROMX, BANK[$1F]
@@ -84011,7 +85541,31 @@ LoggedData_0x7E83E:
 INCBIN "baserom.gb", $7E83E, $7F217 - $7E83E
 
 UnknownData_0x7F217:
-INCBIN "baserom.gb", $7F217, $7FE80 - $7F217
+INCBIN "baserom.gb", $7F217, $7F800 - $7F217
 
-LoggedData_0x7FE80:
-INCBIN "baserom.gb", $7FE80, $80000 - $7FE80
+Tileset_0x07F800:
+INCBIN "gfx/tilesets/tileset_0x07F800.2bpp"  ; $07F800 - $07F8E0
+
+Tileset_0x07F8E0:
+INCBIN "gfx/tilesets/tileset_0x07F8E0.2bpp"  ; $07F8E0 - $07FA20
+
+Tileset_0x07FA20:
+INCBIN "gfx/tilesets/tileset_0x07FA20.2bpp"  ; $07FA20 - $07FB00
+
+Tileset_0x07FB00:
+INCBIN "gfx/tilesets/tileset_0x07FB00.2bpp"  ; $07FB00 - $07FB90
+
+Tileset_0x07FB90:
+INCBIN "gfx/tilesets/tileset_0x07FB90.2bpp"  ; $07FB90 - $07FCB0
+
+Tileset_0x07FCB0:
+INCBIN "gfx/tilesets/tileset_0x07FCB0.2bpp"  ; $07FCB0 - $07FD90
+
+Tileset_0x07FD90:
+INCBIN "gfx/tilesets/tileset_0x07FD90.2bpp"  ; $07FD90 - $07FE80
+
+Tileset_0x07FE80:
+INCBIN "gfx/tilesets/tileset_0x07FE80.2bpp"  ; $07FE80 - $07FEC0
+
+Tileset_0x07FEC0:
+INCBIN "gfx/tilesets/tileset_0x07FEC0.2bpp"  ; $07FEC0 - $080000
