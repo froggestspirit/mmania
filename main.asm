@@ -1,13 +1,17 @@
 INCLUDE "macros.asm"
 
+
 SECTION "bank00", ROM0
+
 
 SECTION "rst00", ROM0[$00]
 	ret
 
+
 SECTION "rst08", ROM0[$08]
 JumpList::
 	jp Logged_0x0932
+
 
 SECTION "rst10", ROM0[$10]
 BankSwitch::
@@ -15,20 +19,26 @@ BankSwitch::
 	ld [$2000],a
 	ret
 
+
 SECTION "rst18", ROM0[$18]
 	ret
+
 
 SECTION "rst20", ROM0[$20]
 	ret
 
+
 SECTION "rst28", ROM0[$28]
 	ret
+
 
 SECTION "rst30", ROM0[$30]
 	ret
 
+
 SECTION "rst38", ROM0[$38]
 	ret
+
 
 SECTION "vblankInt", ROM0[$40]
 	jp Logged_0x0331
@@ -36,16 +46,19 @@ SECTION "vblankInt", ROM0[$40]
 UnknownData_0x0043:
 INCBIN "baserom.gb", $0043, $0048 - $0043
 
+
 SECTION "lcdstatInt", ROM0[$48]
 	jp Logged_0x041D
 
 UnknownData_0x004B:
 INCBIN "baserom.gb", $004B, $0050 - $004B
 
+
 SECTION "timerInt", ROM0[$50]
 
 UnknownData_0x0050:
 INCBIN "baserom.gb", $0050, $0058 - $0050
+
 
 SECTION "serialInt", ROM0[$58]
 	jp Logged_0x048D
@@ -53,14 +66,17 @@ SECTION "serialInt", ROM0[$58]
 UnknownData_0x005B:
 INCBIN "baserom.gb", $005B, $0060 - $005B
 
+
 SECTION "joypadInt", ROM0[$60]
 
 UnknownData_0x0060:
 INCBIN "baserom.gb", $0060, $0100 - $0060
 
+
 SECTION "start", ROM0[$100]
 	nop
 	jp Init
+
 
 SECTION "Header", ROM0[$134]
 	db "MOGURANYA",0,0,0,0,0,0,0;Title
@@ -72,6 +88,7 @@ SECTION "Header", ROM0[$134]
 	db $01;Destination Code
 	db $33;Old Licensee Code
 	db $00;Version
+
 
 SECTION "Home", ROM0[$150]
 
@@ -10393,6 +10410,7 @@ WorldPointers:
 	dbw World8Pointer
 	dbw World9Pointer
 
+
 SECTION "Bank01", ROMX, BANK[$01]
 
 Logged_0x4000:
@@ -15854,7 +15872,8 @@ LoggedData_0x6CFD:
 INCBIN "baserom.gb", $6CFD, $734D - $6CFD
 
 UnknownData_0x734D:
-INCBIN "baserom.gb", $734D, $8000 - $734D
+INCBIN "baserom.gb", $734D, $7D30 - $734D
+
 
 SECTION "Bank02", ROMX, BANK[$02]
 
@@ -16864,8 +16883,6 @@ INCBIN "baserom.gb", $B73D, $B73F - $B73D
 LoggedData_0xB73F:
 INCBIN "baserom.gb", $B73F, $B74D - $B73F
 
-UnknownData_0xB74D:
-INCBIN "baserom.gb", $B74D, $C000 - $B74D
 
 SECTION "Bank03", ROMX, BANK[$03]
 
@@ -27294,16 +27311,12 @@ INCBIN "baserom.gb", $F748, $F76A - $F748
 LoggedData_0xF76A:
 INCBIN "baserom.gb", $F76A, $F87A - $F76A
 
-UnknownData_0xF87A:
-INCBIN "baserom.gb", $F87A, $10000 - $F87A
 
 SECTION "Bank04", ROMX, BANK[$04]
 
 LoggedData_0x10000:
 INCBIN "baserom.gb", $10000, $13FD0 - $10000
 
-UnknownData_0x13FD0:
-INCBIN "baserom.gb", $13FD0, $14000 - $13FD0
 
 SECTION "Bank05", ROMX, BANK[$05]
 
@@ -27401,7 +27414,8 @@ LoggedData_0x15571:
 INCBIN "baserom.gb", $15571, $156DA - $15571
 
 UnknownData_0x156DA:
-INCBIN "baserom.gb", $156DA, $18000 - $156DA
+INCBIN "baserom.gb", $156DA, $15750 - $156DA
+
 
 SECTION "Bank06", ROMX, BANK[$06]
 
@@ -27679,10 +27693,11 @@ LoggedData_0x1AC8C:
 INCBIN "baserom.gb", $1AC8C, $1AE92 - $1AC8C
 
 UnknownData_0x1AE92:
-INCBIN "baserom.gb", $1AE92, $1B000 - $1AE92
+INCBIN "baserom.gb", $1AE92, $1B000 - $1AE92 ; Freespace?
 
 LoggedData_0x1B000:
 INCBIN "baserom.gb", $1B000, $1C000 - $1B000
+
 
 SECTION "Bank07", ROMX, BANK[$07]
 
@@ -30822,6 +30837,7 @@ INCBIN "baserom.gb", $1E8A2, $1E8A3 - $1E8A2
 
 LoggedData_0x1E8A3:
 INCBIN "baserom.gb", $1E8A3, $20000 - $1E8A3
+
 
 SECTION "Bank08", ROMX, BANK[$08]
 
@@ -36541,7 +36557,8 @@ LoggedData_0x22B47:
 INCBIN "baserom.gb", $22B47, $23155 - $22B47
 
 UnknownData_0x23155:
-INCBIN "baserom.gb", $23155, $24000 - $23155
+INCBIN "baserom.gb", $23155, $23160 - $23155
+
 
 SECTION "Bank09", ROMX, BANK[$09]
 
@@ -43879,8 +43896,6 @@ INCBIN "baserom.gb", $27545, $27547 - $27545
 LoggedData_0x27547:
 INCBIN "baserom.gb", $27547, $27551 - $27547
 
-UnknownData_0x27551:
-INCBIN "baserom.gb", $27551, $28000 - $27551
 
 SECTION "Bank0A", ROMX, BANK[$0A]
 
@@ -44072,6 +44087,7 @@ INCBIN "baserom.gb", $2AC60, $2AD60 - $2AC60
 
 LoggedData_0x2AD60:
 INCBIN "baserom.gb", $2AD60, $2C000 - $2AD60
+
 
 SECTION "Bank0B", ROMX, BANK[$0B]
 
@@ -47536,8 +47552,6 @@ INCBIN "baserom.gb", $2FF93, $2FF94 - $2FF93
 LoggedData_0x2FF94:
 INCBIN "baserom.gb", $2FF94, $2FFDF - $2FF94
 
-UnknownData_0x2FFDF:
-INCBIN "baserom.gb", $2FFDF, $30000 - $2FFDF
 
 SECTION "Bank0C", ROMX, BANK[$0C]
 	ld a,$10
@@ -56929,8 +56943,6 @@ Logged_0x33FDC:
 	inc hl
 	ret
 
-UnknownData_0x33FDE:
-INCBIN "baserom.gb", $33FDE, $34000 - $33FDE
 
 SECTION "Bank0D", ROMX, BANK[$0D]
 
@@ -57423,8 +57435,6 @@ INCBIN "baserom.gb", $37E9E, $37EB5 - $37E9E
 LoggedData_0x37EB5:
 INCBIN "baserom.gb", $37EB5, $37ED1 - $37EB5
 
-UnknownData_0x37ED1:
-INCBIN "baserom.gb", $37ED1, $38000 - $37ED1
 
 SECTION "Bank0E", ROMX, BANK[$0E]
 
@@ -57780,12 +57790,14 @@ LoggedData_0x3B441:
 INCBIN "baserom.gb", $3B441, $3BA57 - $3B441
 
 UnknownData_0x3BA57:
-INCBIN "baserom.gb", $3BA57, $3C000 - $3BA57
+INCBIN "baserom.gb", $3BA57, $3BA80 - $3BA57
+
 
 SECTION "Bank0F", ROMX, BANK[$0F]
 
 UnknownData_0x3C000:
-INCBIN "baserom.gb", $3C000, $40000 - $3C000
+INCBIN "baserom.gb", $3C000, $3F930 - $3C000
+
 
 SECTION "Bank10", ROMX, BANK[$10]
 	ld hl,$0014
@@ -67317,7 +67329,8 @@ Logged_0x43BC1:
 	ret
 
 UnknownData_0x43BC8:
-INCBIN "baserom.gb", $43BC8, $44000 - $43BC8
+INCBIN "baserom.gb", $43BC8, $43C20 - $43BC8
+
 
 SECTION "Bank11", ROMX, BANK[$11]
 
@@ -71039,7 +71052,8 @@ Unknown_0x47F57:
 	ret
 
 UnknownData_0x47F5B:
-INCBIN "baserom.gb", $47F5B, $48000 - $47F5B
+INCBIN "baserom.gb", $47F5B, $47F70 - $47F5B
+
 
 SECTION "Bank12", ROMX, BANK[$12]
 
@@ -71254,6 +71268,7 @@ INCBIN "baserom.gb", $4AA99, $4ABD2 - $4AA99
 UnknownData_0x4ABD2:
 INCBIN "baserom.gb", $4ABD2, $4C000 - $4ABD2
 
+
 SECTION "Bank13", ROMX, BANK[$13]
 
 LoggedData_0x4C000:
@@ -71271,8 +71286,6 @@ INCBIN "baserom.gb", $4FA30, $4FA70 - $4FA30
 LoggedData_0x4FA70:
 INCBIN "baserom.gb", $4FA70, $4FB40 - $4FA70
 
-UnknownData_0x4FB40:
-INCBIN "baserom.gb", $4FB40, $50000 - $4FB40
 
 SECTION "Bank14", ROMX, BANK[$14]
 
@@ -78445,6 +78458,7 @@ INCBIN "baserom.gb", $53FD0, $53FE6 - $53FD0
 UnknownData_0x53FE6:
 INCBIN "baserom.gb", $53FE6, $54000 - $53FE6
 
+
 SECTION "Bank15", ROMX, BANK[$15]
 
 LoggedData_0x54000:
@@ -78455,6 +78469,7 @@ INCBIN "baserom.gb", $57A20, $57C10 - $57A20
 
 LoggedData_0x57C10:
 INCBIN "baserom.gb", $57C10, $58000 - $57C10
+
 
 SECTION "Bank16", ROMX, BANK[$16]
 
@@ -78593,8 +78608,6 @@ INCBIN "baserom.gb", $59996, $59A11 - $59996
 LoggedData_0x59A11:
 INCBIN "baserom.gb", $59A11, $59A95 - $59A11
 
-UnknownData_0x59A95:
-INCBIN "baserom.gb", $59A95, $5C000 - $59A95
 
 SECTION "Bank17", ROMX, BANK[$17]
 
@@ -78602,7 +78615,8 @@ LoggedData_0x5C000:
 INCBIN "baserom.gb", $5C000, $5EF00 - $5C000
 
 UnknownData_0x5EF00:
-INCBIN "baserom.gb", $5EF00, $60000 - $5EF00
+INCBIN "baserom.gb", $5EF00, $5FD00 - $5EF00
+
 
 SECTION "Bank18", ROMX, BANK[$18]
 
@@ -78614,6 +78628,7 @@ INCBIN "baserom.gb", $61E20, $61F20 - $61E20
 
 LoggedData_0x61F20:
 INCBIN "baserom.gb", $61F20, $64000 - $61F20
+
 
 SECTION "Bank19", ROMX, BANK[$19]
 
@@ -79066,6 +79081,7 @@ INCBIN "baserom.gb", $6771A, $67740 - $6771A
 
 UnknownData_0x67740:
 INCBIN "baserom.gb", $67740, $68000 - $67740
+
 
 SECTION "Bank1A", ROMX, BANK[$1A]
 
@@ -82245,7 +82261,8 @@ Logged_0x6BD69:
 	ret
 
 UnknownData_0x6BD6D:
-INCBIN "baserom.gb", $6BD6D, $6C000 - $6BD6D
+INCBIN "baserom.gb", $6BD6D, $6BF20 - $6BD6D
+
 
 SECTION "Bank1B", ROMX, BANK[$1B]
 
@@ -82369,6 +82386,7 @@ INCBIN "baserom.gb", $6F000, $6F870 - $6F000
 UnknownData_0x6F870:
 INCBIN "baserom.gb", $6F870, $70000 - $6F870
 
+
 SECTION "Bank1C", ROMX, BANK[$1C]
 
 World3Pointer:
@@ -82474,10 +82492,8 @@ UnknownData_0x734DD:
 INCBIN "baserom.gb", $734DD, $734DE - $734DD
 
 LoggedData_0x734DE:
-INCBIN "baserom.gb", $734DE, $73A1F - $734DE
+INCBIN "baserom.gb", $734DE, $73A20 - $734DE
 
-UnknownData_0x73A1F:
-INCBIN "baserom.gb", $73A1F, $74000 - $73A1F
 
 SECTION "Bank1D", ROMX, BANK[$1D]
 
@@ -82657,6 +82673,7 @@ INCBIN "baserom.gb", $77723, $77FD0 - $77723
 
 LoggedData_0x77FD0:
 INCBIN "baserom.gb", $77FD0, $78000 - $77FD0
+
 
 SECTION "Bank1E", ROMX, BANK[$1E]
 
@@ -83917,6 +83934,7 @@ INCBIN "baserom.gb", $7B788, $7B860 - $7B788
 
 LoggedData_0x7B860:
 INCBIN "baserom.gb", $7B860, $7C000 - $7B860
+
 
 SECTION "Bank1F", ROMX, BANK[$1F]
 
