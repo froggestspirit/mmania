@@ -899,7 +899,7 @@ Unknown_0x0652:
 	ld hl,$FF93
 	ld de,$C10E
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ldh a,[$FF00+$FF]
 	and $F8
 	ldh [$FF00+$FF],a
@@ -1065,7 +1065,7 @@ Unknown_0x0735:
 	ld hl,$C10E
 	ld de,$FF93
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 
 Logged_0x0747:
 	xor a
@@ -1166,7 +1166,7 @@ Unknown_0x07C0:
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$C181
 	ld a,$51
 	ld [hli],a
@@ -1287,7 +1287,7 @@ Unknown_0x0874:
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$C181
 	ld a,$51
 	ld [hli],a
@@ -1311,7 +1311,7 @@ Unknown_0x0874:
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$C182
 	call Unknown_0x08FF
 	ld hl,$C181
@@ -1319,7 +1319,7 @@ Unknown_0x0874:
 	ld hl,$C161
 	ld de,$C182
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$C181
 	jp Unknown_0x16A4
 
@@ -1394,7 +1394,7 @@ Fill_RAM:
 	jr nz,Fill_RAM
 	ret
 
-Load_Data:
+Load_Data_Large:
 ;loads data from HL to DE with BC size
 	ld a,[hli]
 	ld [de],a
@@ -1402,15 +1402,16 @@ Load_Data:
 	dec bc
 	ld a,b
 	or c
-	jr nz,Load_Data
+	jr nz,Load_Data_Large
 	ret
 
-Logged_0x092B:
+Load_Data:
+;loads data from HL to DE with C size
 	ld a,[hli]
 	ld [de],a
 	inc de
 	dec c
-	jr nz,Logged_0x092B
+	jr nz,Load_Data
 	ret
 
 Logged_0x0932:
@@ -1752,7 +1753,7 @@ Load_Tileset:
 	pop af
 	ld b,a
 	pop hl
-	call Load_Data
+	call Load_Data_Large
 	pop hl
 	ld de,$0007
 	add hl,de
@@ -3768,7 +3769,7 @@ Unknown_0x1593:
 	ld hl,$5AE6
 	ld de,$8800
 	ld bc,$1000
-	call Load_Data
+	call Load_Data_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$18
@@ -3779,7 +3780,7 @@ Unknown_0x1593:
 	ld hl,$6AE6
 	ld de,$8800
 	ld bc,$1000
-	call Load_Data
+	call Load_Data_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$19
@@ -3790,7 +3791,7 @@ Unknown_0x1593:
 	ld hl,$70C6
 	ld de,$8800
 	ld bc,$0860
-	call Load_Data
+	call Load_Data_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$1A
@@ -3801,7 +3802,7 @@ Unknown_0x1593:
 	ld hl,$4000
 	ld de,$8800
 	ld bc,$1000
-	call Load_Data
+	call Load_Data_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$04
@@ -3810,7 +3811,7 @@ Unknown_0x1593:
 	ld hl,$5000
 	ld de,$8800
 	ld bc,$0FD2
-	call Load_Data
+	call Load_Data_Large
 	ld a,$81
 	ldh [$FF00+$40],a
 	ld a,$05
@@ -4247,7 +4248,7 @@ Logged_0x1910:
 	add a,a
 	ld c,a
 	ld de,$CDC2
-	call Logged_0x092B
+	call Load_Data
 
 Logged_0x1942:
 	pop hl
@@ -5333,7 +5334,7 @@ Logged_0x1FEA:
 	add a,a
 	ld c,a
 	ld de,$CE42
-	call Logged_0x092B
+	call Load_Data
 
 Logged_0x2004:
 	pop hl
@@ -5573,11 +5574,11 @@ Logged_0x2122:
 	ld hl,$2266
 	ld de,$CE84
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$226A
 	ld de,$CE7E
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ldh a,[$FF00+$8C]
 	push af
 	ld hl,$CE75
@@ -5978,7 +5979,7 @@ Logged_0x236F:
 	ld hl,$23DB
 	ld de,$CE84
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C9E4]
 	cp $07
 	jr nz,Logged_0x238A
@@ -6012,7 +6013,7 @@ Logged_0x238A:
 	add hl,de
 	ld de,$CE88
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld de,$8000
 	add hl,de
@@ -8536,7 +8537,7 @@ Logged_0x3262:
 	inc hl
 	ld de,$C161
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	pop af
 	rst BankSwitch
 	ret
@@ -10615,7 +10616,7 @@ Logged_0x415F:
 	call Logged_0x3291
 	ld de,$D144
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	xor a
 	ld [$D179],a
 	ld a,$04
@@ -10883,7 +10884,7 @@ Logged_0x436A:
 	ld d,h
 	ld hl,$D144
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$FF47
 	ld a,$1E
 	ld [hli],a
@@ -11179,7 +11180,7 @@ Logged_0x47CE:
 	push hl
 	ld de,$D000
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld e,a
@@ -12200,7 +12201,7 @@ Logged_0x4E1A:
 	add hl,bc
 	ld de,$CE88
 	ld c,$10
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld bc,$8000
 	add hl,bc
@@ -13007,7 +13008,7 @@ Logged_0x53B2:
 	ld hl,$53D7
 	ld de,$C420
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$D141
 	set 0,[hl]
 	ld hl,$C705
@@ -13064,7 +13065,7 @@ INCBIN "baserom.gb", $5484, $54E6 - $5484
 	ld h,d
 	ld de,$C200
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$5504
 	push hl
 	ld a,[$CEB7]
@@ -13080,7 +13081,7 @@ INCBIN "baserom.gb", $5484, $54E6 - $5484
 	pop de
 	ld hl,$C200
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	xor a
 	ld [$C200],a
 	ret
@@ -32264,7 +32265,7 @@ Logged_0x20089:
 	ld hl,$41C3
 	ld de,$C129
 	ld c,$0D
-	call Logged_0x092B
+	call Load_Data
 	call Logged_0x20C43
 	ld hl,$9800
 	ld a,$A2
@@ -33311,7 +33312,7 @@ Unknown_0x2082C:
 	ld hl,$48BB
 	ld de,$CE88
 	ld c,$10
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C263]
 	sub $4A
 	push af
@@ -33579,7 +33580,7 @@ Logged_0x209F4:
 	ld [$CC40],a
 	ld de,$CE5D
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	inc hl
 	ld a,[hl]
 	ld [$CC41],a
@@ -33655,34 +33656,34 @@ Logged_0x20A3C:
 	ld c,a
 	push de
 	ld de,$CC42
-	call Logged_0x092B
+	call Load_Data
 	pop de
 	inc de
 	ld a,[de]
 	ld c,a
 	push de
 	ld de,$CC82
-	call Logged_0x092B
+	call Load_Data
 	pop de
 	inc de
 	ld a,[de]
 	ld c,a
 	push de
 	ld de,$CD82
-	call Logged_0x092B
+	call Load_Data
 	pop de
 	inc de
 	ld a,[de]
 	ld c,a
 	push de
 	ld de,$CDC2
-	call Logged_0x092B
+	call Load_Data
 	pop de
 	inc de
 	ld a,[de]
 	ld c,a
 	ld de,$C922
-	call Logged_0x092B
+	call Load_Data
 	ld a,$00
 	ld [$0000],a
 	ret
@@ -33715,7 +33716,7 @@ Logged_0x20B03:
 	ld d,h
 	ld hl,$CE5D
 	ld c,$08
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C9E4]
 	ld [de],a
 	inc de
@@ -33799,31 +33800,31 @@ Logged_0x20B5E:
 	ld c,a
 	push hl
 	ld hl,$CC42
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld c,a
 	push hl
 	ld hl,$CC82
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld c,a
 	push hl
 	ld hl,$CD82
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld c,a
 	push hl
 	ld hl,$CDC2
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld c,a
 	push hl
 	ld hl,$C922
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,[hli]
 	ld b,[hl]
@@ -33849,7 +33850,7 @@ Logged_0x20B5E:
 	ld d,h
 	pop hl
 	ld bc,$0800
-	call Load_Data
+	call Load_Data_Large
 	ld a,$00
 	ld [$0000],a
 	ret
@@ -33977,7 +33978,7 @@ Unknown_0x20CEB:
 	ld bc,$1000
 	add hl,bc
 	ld bc,$0800
-	call Load_Data
+	call Load_Data_Large
 	pop hl
 
 Logged_0x20CFA:
@@ -34075,7 +34076,7 @@ INCBIN "baserom.gb", $20D69, $20D72 - $20D69
 Logged_0x20D72:
 	pop bc
 	inc bc
-	call Load_Data
+	call Load_Data_Large
 	pop bc
 	pop hl
 	ld a,$01
@@ -34336,7 +34337,7 @@ Unknown_0x20F44:
 	ld hl,$4F9D
 	ld de,$CE88
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$CE81
 	ld a,$CE
 	ld [hld],a
@@ -34362,7 +34363,7 @@ Unknown_0x20F6E:
 	ld hl,$4FA3
 	ld de,$CE88
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$CE81
 	ld a,$CE
 	ld [hld],a
@@ -34699,11 +34700,11 @@ Logged_0x2113E:
 	ld hl,$51CD
 	ld de,$CE82
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$51D3
 	ld de,$CE9C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,$68
 	call Logged_0x1629
 	ld a,$68
@@ -34901,7 +34902,7 @@ Logged_0x212CB:
 	add hl,bc
 	ld de,$CE88
 	ld c,$0A
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$CE76
 	ld a,[hl]
 	add a,a
@@ -34914,7 +34915,7 @@ Logged_0x212CB:
 	add hl,bc
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld de,$CE7C
 	call Logged_0x09A3
 	call Logged_0x2167A
@@ -34968,11 +34969,11 @@ Logged_0x2136E:
 Logged_0x2138A:
 	ld de,$CE88
 	ld c,$0A
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$53C2
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld de,$CE7C
 	call Logged_0x09A3
 	ld hl,$CE75
@@ -35000,11 +35001,11 @@ Logged_0x213D8:
 	ld hl,$53C8
 	ld de,$CE88
 	ld c,$0A
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$53D2
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$CE66]
 	and a
 	jr nz,Logged_0x21410
@@ -35103,7 +35104,7 @@ Logged_0x21497:
 	ld hl,$5559
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$CE75
 	ld b,$04
 	ld a,[$D22F]
@@ -35224,11 +35225,11 @@ Logged_0x2155F:
 	ld hl,$55CD
 	ld de,$CE88
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$55C7
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$CE76]
 	inc a
 	ld l,a
@@ -35733,7 +35734,7 @@ Logged_0x2196A:
 	ld hl,$5A1F
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$CE88
 	ld a,$1A
 	ld [hli],a
@@ -35780,7 +35781,7 @@ Logged_0x219CA:
 	ld hl,$5A19
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld de,$5A25
 	ld a,[$C223]
 	cp $70
@@ -35872,12 +35873,12 @@ Logged_0x21A69:
 	add hl,bc
 	ld de,$D000
 	ld c,$07
-	call Logged_0x092B
+	call Load_Data
 	inc hl
 	inc hl
 	inc hl
 	ld c,$07
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	add a,$30
 	srl a
@@ -35892,16 +35893,16 @@ Logged_0x21A69:
 	ld hl,$D000
 	ld de,$D00E
 	ld c,$0E
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$D00E
 	ld de,$D000
 	ld a,[$D24B]
 	ld c,a
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$D015
 	ld a,[$D24B]
 	ld c,a
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$D24B]
 	ld c,a
 	ld b,$00
@@ -35913,14 +35914,14 @@ Logged_0x21A69:
 	inc a
 	ld c,a
 	push bc
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$D24B]
 	ld c,a
 	ld b,$00
 	ld hl,$D015
 	add hl,bc
 	pop bc
-	call Logged_0x092B
+	call Load_Data
 
 Logged_0x21AFB:
 	ld hl,$D00E
@@ -36098,7 +36099,7 @@ Logged_0x21C38:
 	ld hl,$5F20
 	ld de,$CE82
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	and $F8
 	add a,$60
@@ -36308,7 +36309,7 @@ Logged_0x21D7C:
 	ld hl,$5E6A
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	add a,$58
 	srl a
@@ -36407,7 +36408,7 @@ Unknown_0x21E9E:
 	ld hl,$5F20
 	ld de,$CE82
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	and $F8
 	add a,$68
@@ -36519,7 +36520,7 @@ Logged_0x21F62:
 	ld hl,$6082
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$CE76]
 	swap a
 	add a,a
@@ -36574,7 +36575,7 @@ Logged_0x21F8E:
 	ld hl,$6088
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	xor a
 	ld [$CE76],a
 	jr Logged_0x22060
@@ -36674,7 +36675,7 @@ Logged_0x220C7:
 	ld hl,$6082
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	call Logged_0x22060
 
 Logged_0x220D9:
@@ -36864,7 +36865,7 @@ Logged_0x221F3:
 	ld h,[hl]
 	ld l,a
 	ld de,$CE88
-	call Logged_0x092B
+	call Load_Data
 	ld de,$CE81
 	ld a,$CE
 	ld [de],a
@@ -37592,7 +37593,7 @@ Logged_0x227B6:
 	ld hl,$67EE
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	add a,$C8
 	srl a
@@ -37643,7 +37644,7 @@ Logged_0x2280C:
 	ld hl,$67EE
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	add a,$D0
 	srl a
@@ -37690,7 +37691,7 @@ Logged_0x2286C:
 Logged_0x2286E:
 	push bc
 	ld c,$0A
-	call Logged_0x092B
+	call Load_Data
 	inc de
 	pop bc
 	dec c
@@ -37783,7 +37784,7 @@ Logged_0x22900:
 Logged_0x22902:
 	push bc
 	ld c,$0A
-	call Logged_0x092B
+	call Load_Data
 	inc de
 	pop bc
 	dec c
@@ -50712,7 +50713,7 @@ Logged_0x3095F:
 	ret z
 	ld de,$C560
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ld a,$83
 	ld [$C560],a
 	ld a,$01
@@ -52996,7 +52997,7 @@ Logged_0x3169C:
 	pop hl
 	push de
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	ld a,$82
 	ld [hli],a
@@ -54325,7 +54326,7 @@ INCBIN "baserom.gb", $31E47, $31E67 - $31E47
 	pop hl
 	push de
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	pop de
 	xor a
@@ -54852,7 +54853,7 @@ Logged_0x320DE:
 	pop hl
 	push de
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	pop hl
 	pop de
 	xor a
@@ -77681,7 +77682,7 @@ Logged_0x5279C:
 	ld hl,$727C
 	ld de,$C200
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ret
 
 Logged_0x527BA:
@@ -78248,7 +78249,7 @@ Logged_0x52B2A:
 	ld hl,$C420
 	ld de,$C220
 	ld c,$20
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$C705
 	set 7,[hl]
 
@@ -84717,7 +84718,7 @@ Logged_0x7B292:
 	ld hl,$72E8
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld a,[$C1A5]
 	add a,$28
 	srl a
@@ -84795,7 +84796,7 @@ Logged_0x7B33F:
 	ld hl,$7382
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld de,$CE7D
 	pop hl
 	ld a,h
@@ -84921,7 +84922,7 @@ INCBIN "baserom.gb", $7B40A, $7B412 - $7B40A
 	ld hl,$748E
 	ld de,$CE7C
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	ld de,$CE7D
 	ld a,$99
 	ld [de],a
@@ -84991,11 +84992,11 @@ INCBIN "baserom.gb", $7B48E, $7B494 - $7B48E
 	ld hl,$74FF
 	ld de,$CE9C
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$7503
 	ld de,$CE82
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	pop af
 	sub $70
 	srl a
@@ -85037,11 +85038,11 @@ INCBIN "baserom.gb", $7B4FF, $7B509 - $7B4FF
 	add hl,bc
 	ld de,$CE9C
 	ld c,$04
-	call Logged_0x092B
+	call Load_Data
 	ld hl,$7503
 	ld de,$CE82
 	ld c,$06
-	call Logged_0x092B
+	call Load_Data
 	pop af
 	sub $58
 	ld l,a
