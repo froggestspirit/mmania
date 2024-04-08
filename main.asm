@@ -15952,7 +15952,7 @@ TilesetPointers:
 ;		dw: length of tileset data
 dw Tileset_00  ; 4DAC
 dw Tileset_01  ; 4DB4
-dw Tileset_01  ; 4DB4
+dw Tileset_02  ; 4DB4
 dw Tileset_03  ; 4DCA
 dw Tileset_04  ; 4DD2
 dw Tileset_05  ; 4E12
@@ -15994,9 +15994,9 @@ dw Tileset_28  ; 52C6
 dw Tileset_29  ; 52D5
 dw Tileset_2A  ; 52F2
 dw Tileset_2B  ; 5301
-dw Tileset_2B  ; 5301
-dw Tileset_2B  ; 5301
-dw Tileset_2B  ; 5301
+dw Tileset_2C  ; 5301
+dw Tileset_2D  ; 5301
+dw Tileset_2E  ; 5301
 dw Tileset_2F  ; 5317
 dw Tileset_30  ; 5334
 dw Tileset_31  ; 535F
@@ -16008,36 +16008,36 @@ dw Tileset_36  ; 5436
 dw Tileset_37  ; 5445
 dw Tileset_38  ; 5454
 dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
-dw Tileset_39  ; 548D
+dw Tileset_3A  ; 548D
+dw Tileset_3B  ; 548D
+dw Tileset_3C  ; 548D
+dw Tileset_3D  ; 548D
+dw Tileset_3E  ; 548D
+dw Tileset_3F  ; 548D
+dw Tileset_40  ; 548D
+dw Tileset_41  ; 548D
+dw Tileset_42  ; 548D
+dw Tileset_43  ; 548D
+dw Tileset_44  ; 548D
+dw Tileset_45  ; 548D
+dw Tileset_46  ; 548D
+dw Tileset_47  ; 548D
+dw Tileset_48  ; 548D
 dw Tileset_49  ; 54BF
-dw Tileset_49  ; 54BF
-dw Tileset_49  ; 54BF
-dw Tileset_49  ; 54BF
+dw Tileset_4A  ; 54BF
+dw Tileset_4B  ; 54BF
+dw Tileset_4C  ; 54BF
 dw Tileset_4D  ; 54E3
-dw Tileset_49  ; 54BF
-dw Tileset_49  ; 54BF
+dw Tileset_4E  ; 54BF
+dw Tileset_4F  ; 54BF
 dw Tileset_50  ; 5523
 dw Tileset_51  ; 554E
-dw Tileset_51  ; 554E
-dw Tileset_51  ; 554E
-dw Tileset_51  ; 554E
+dw Tileset_52  ; 554E
+dw Tileset_53  ; 554E
+dw Tileset_54  ; 554E
 dw Tileset_55  ; 556B
-dw Tileset_51  ; 554E
-dw Tileset_51  ; 554E
+dw Tileset_56  ; 554E
+dw Tileset_57  ; 554E
 dw Tileset_58  ; 55A4
 dw Tileset_59  ; 55CF
 dw Tileset_5A  ; 5608
@@ -16063,6 +16063,7 @@ Tileset_00:
 	dw $1800
 
 Tileset_01:
+Tileset_02:
 	db $03
 	dbw Tileset_0x06F800
 	dw $8000
@@ -16750,6 +16751,9 @@ Tileset_2A:
 	dw $0800
 
 Tileset_2B:
+Tileset_2C:
+Tileset_2D:
+Tileset_2E:
 	db $03
 	dbw Tileset_0x02A570
 	dw $8000
@@ -16948,6 +16952,21 @@ Tileset_38:
 	dw $00E0
 
 Tileset_39:
+Tileset_3A:
+Tileset_3B:
+Tileset_3C:
+Tileset_3D:
+Tileset_3E:
+Tileset_3F:
+Tileset_40:
+Tileset_41:
+Tileset_42:
+Tileset_43:
+Tileset_44:
+Tileset_45:
+Tileset_46:
+Tileset_47:
+Tileset_48:
 	db $07
 	dbw Tileset_0x011800
 	dw $8400
@@ -16972,6 +16991,11 @@ Tileset_39:
 	dw $0040
 
 Tileset_49:
+Tileset_4A:
+Tileset_4B:
+Tileset_4C:
+Tileset_4E:
+Tileset_4F:
 	db $05
 	dbw Tileset_0x011800
 	dw $8400
@@ -17041,6 +17065,11 @@ Tileset_50:
 	dw $0040
 
 Tileset_51:
+Tileset_52:
+Tileset_53:
+Tileset_54:
+Tileset_56:
+Tileset_57:
 	db $04
 	dbw Tileset_0x011B00
 	dw $8800
