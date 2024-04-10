@@ -17152,10 +17152,10 @@ Tileset_59:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F7B0
+	dbw Tileset_Enemies3
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17179,10 +17179,10 @@ Tileset_5A:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17206,10 +17206,10 @@ Tileset_5B:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F870
+	dbw Tileset_Enemies4
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17242,13 +17242,13 @@ Tileset_5C:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F6F0
+	dbw Tileset_Enemies2
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
 
@@ -17284,10 +17284,10 @@ Tileset_5D:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F7B0
+	dbw Tileset_Enemies3
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17311,10 +17311,10 @@ Tileset_5E:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
 
@@ -17365,10 +17365,10 @@ Tileset_60:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17395,13 +17395,13 @@ Tileset_61:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F7B0
+	dbw Tileset_Enemies3
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F870
+	dbw Tileset_Enemies4
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
 
@@ -17437,13 +17437,13 @@ Tileset_62:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F7B0
+	dbw Tileset_Enemies3
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F870
+	dbw Tileset_Enemies4
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17479,13 +17479,13 @@ Tileset_63:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F7B0
+	dbw Tileset_Enemies3
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F870
+	dbw Tileset_Enemies4
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x013880
+	dbw Tileset_Enemies6
 	dw $82A0
 	dw $0160
 
@@ -17524,13 +17524,13 @@ Tileset_64:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
-	dbw Tileset_0x04F6F0
+	dbw Tileset_Enemies2
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F870
+	dbw Tileset_Enemies4
 	dw $80C0
 	dw $00C0
 
@@ -17563,13 +17563,13 @@ Tileset_65:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F6F0
+	dbw Tileset_Enemies2
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
 
@@ -17593,13 +17593,13 @@ Tileset_66:
 	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
-	dbw Tileset_0x04F6F0
+	dbw Tileset_Enemies2
 	dw $8000
 	dw $00C0
-	dbw Tileset_0x04F930
+	dbw Tileset_Enemies5
 	dw $80C0
 	dw $00C0
-	dbw Tileset_0x0139E0
+	dbw Tileset_Enemies7
 	dw $82A0
 	dw $0100
 
@@ -28646,11 +28646,11 @@ INCBIN "gfx/tilesets/tileset_0x013040.2bpp"  ; $013040 - $0135E0
 Tileset_Enemies1:
 INCBIN "gfx/tilesets/enemies1.2bpp"  ; $0135E0 - $013880
 
-Tileset_0x013880:
-INCBIN "gfx/tilesets/tileset_0x013880.2bpp"  ; $013880 - $0139E0
+Tileset_Enemies6:
+INCBIN "gfx/tilesets/enemies6.2bpp"  ; $013880 - $0139E0
 
-Tileset_0x0139E0:
-INCBIN "gfx/tilesets/tileset_0x0139E0.2bpp"  ; $0139E0 - $013AE0
+Tileset_Enemies7:
+INCBIN "gfx/tilesets/enemies7.2bpp"  ; $0139E0 - $013AE0
 
 Tileset_0x013AE0:
 INCBIN "gfx/tilesets/tileset_0x013AE0.2bpp"  ; $013AE0 - $013C50
@@ -72666,17 +72666,17 @@ INCBIN "gfx/tilesets/tileset_0x04F3F0.2bpp"  ; $04F3F0 - $04F570
 Tileset_0x04F570:
 INCBIN "gfx/tilesets/tileset_0x04F570.2bpp"  ; $04F570 - $04F6F0
 
-Tileset_0x04F6F0:
-INCBIN "gfx/tilesets/tileset_0x04F6F0.2bpp"  ; $04F6F0 - $04F7B0
+Tileset_Enemies2:
+INCBIN "gfx/tilesets/enemies2.2bpp"  ; $04F6F0 - $04F7B0
 
-Tileset_0x04F7B0:
-INCBIN "gfx/tilesets/tileset_0x04F7B0.2bpp"  ; $04F7B0 - $04F870
+Tileset_Enemies3:
+INCBIN "gfx/tilesets/enemies3.2bpp"  ; $04F7B0 - $04F870
 
-Tileset_0x04F870:
-INCBIN "gfx/tilesets/tileset_0x04F870.2bpp"  ; $04F870 - $04F930
+Tileset_Enemies4:
+INCBIN "gfx/tilesets/enemies4.2bpp"  ; $04F870 - $04F930
 
-Tileset_0x04F930:
-INCBIN "gfx/tilesets/tileset_0x04F930.2bpp"  ; $04F930 - $04F9F0
+Tileset_Enemies5:
+INCBIN "gfx/tilesets/enemies5.2bpp"  ; $04F930 - $04F9F0
 
 Tileset_0x04F9F0:
 INCBIN "gfx/tilesets/tileset_0x04F9F0.2bpp"  ; $04F9F0 - $04FA30
