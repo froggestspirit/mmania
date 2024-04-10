@@ -16266,7 +16266,7 @@ Tileset_0B:
 
 Tileset_0C:
 	db $07
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
 	dbw Tileset_0x062EE0
@@ -16404,28 +16404,28 @@ Tileset_17:
 
 Tileset_18:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0620
 
 Tileset_19:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
@@ -16434,13 +16434,13 @@ Tileset_19:
 
 Tileset_1A:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x013040
@@ -16449,13 +16449,13 @@ Tileset_1A:
 
 Tileset_1B:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054000
@@ -16464,13 +16464,13 @@ Tileset_1B:
 
 Tileset_1C:
 	db $07
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054640
@@ -16488,13 +16488,13 @@ Tileset_1C:
 
 Tileset_1D:
 	db $08
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054BE0
@@ -16515,13 +16515,13 @@ Tileset_1D:
 
 Tileset_1E:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055180
@@ -16530,13 +16530,13 @@ Tileset_1E:
 
 Tileset_1F:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
@@ -16545,16 +16545,16 @@ Tileset_1F:
 
 Tileset_20:
 	db $05
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0620
 	dbw Tileset_0x04F370
@@ -16563,13 +16563,13 @@ Tileset_20:
 
 Tileset_21:
 	db $05
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x013040
@@ -16581,13 +16581,13 @@ Tileset_21:
 
 Tileset_22:
 	db $08
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
@@ -16608,13 +16608,13 @@ Tileset_22:
 
 Tileset_23:
 	db $08
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
@@ -16635,13 +16635,13 @@ Tileset_23:
 
 Tileset_24:
 	db $09
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054BE0
@@ -16665,13 +16665,13 @@ Tileset_24:
 
 Tileset_25:
 	db $07
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055180
@@ -16689,13 +16689,13 @@ Tileset_25:
 
 Tileset_26:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054640
@@ -16704,13 +16704,13 @@ Tileset_26:
 
 Tileset_27:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x063630
@@ -16926,16 +16926,16 @@ Tileset_37:
 
 Tileset_38:
 	db $08
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x013AE0
@@ -16968,22 +16968,22 @@ Tileset_46:
 Tileset_47:
 Tileset_48:
 	db $07
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0040
 	dbw Tileset_0x07FE80
@@ -16997,16 +16997,16 @@ Tileset_4C:
 Tileset_4E:
 Tileset_4F:
 	db $05
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
@@ -17015,16 +17015,16 @@ Tileset_4F:
 
 Tileset_4D:
 	db $09
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
@@ -17045,19 +17045,19 @@ Tileset_4D:
 
 Tileset_50:
 	db $06
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0040
 	dbw Tileset_0x07FE80
@@ -17071,13 +17071,13 @@ Tileset_54:
 Tileset_56:
 Tileset_57:
 	db $04
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
@@ -17086,13 +17086,13 @@ Tileset_57:
 
 Tileset_55:
 	db $08
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $00C0
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
@@ -17113,43 +17113,43 @@ Tileset_55:
 
 Tileset_58:
 	db $06
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0620
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 
 Tileset_59:
 	db $08
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F7B0
@@ -17161,22 +17161,22 @@ Tileset_59:
 
 Tileset_5A:
 	db $08
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x013040
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F930
@@ -17188,22 +17188,22 @@ Tileset_5A:
 
 Tileset_5B:
 	db $08
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054000
 	dw $8940
 	dw $0640
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F870
@@ -17215,16 +17215,16 @@ Tileset_5B:
 
 Tileset_5C:
 	db $0C
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054640
@@ -17239,7 +17239,7 @@ Tileset_5C:
 	dbw Tileset_0x055D00
 	dw $9000
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F6F0
@@ -17254,16 +17254,16 @@ Tileset_5C:
 
 Tileset_5D:
 	db $0C
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054BE0
@@ -17281,7 +17281,7 @@ Tileset_5D:
 	dbw Tileset_0x055D00
 	dw $9000
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F7B0
@@ -17293,22 +17293,22 @@ Tileset_5D:
 
 Tileset_5E:
 	db $08
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055180
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F930
@@ -17320,22 +17320,22 @@ Tileset_5E:
 
 Tileset_5F:
 	db $07
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055720
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0040
 	dbw Tileset_0x07FE80
@@ -17344,25 +17344,25 @@ Tileset_5F:
 
 Tileset_60:
 	db $09
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
-	dbw Tileset_0x012480
+	dbw Tileset_LevelWoods
 	dw $8960
 	dw $0620
 	dbw Tileset_0x04F370
 	dw $8A00
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F930
@@ -17374,16 +17374,16 @@ Tileset_60:
 
 Tileset_61:
 	db $0A
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x013040
@@ -17392,7 +17392,7 @@ Tileset_61:
 	dbw Tileset_0x04F3F0
 	dw $8B80
 	dw $0180
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F7B0
@@ -17407,16 +17407,16 @@ Tileset_61:
 
 Tileset_62:
 	db $0D
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
@@ -17434,7 +17434,7 @@ Tileset_62:
 	dbw Tileset_0x055D00
 	dw $9000
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F7B0
@@ -17449,16 +17449,16 @@ Tileset_62:
 
 Tileset_63:
 	db $0D
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x012AA0
@@ -17476,7 +17476,7 @@ Tileset_63:
 	dbw Tileset_0x04F370
 	dw $8A00
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F7B0
@@ -17491,16 +17491,16 @@ Tileset_63:
 
 Tileset_64:
 	db $0E
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054BE0
@@ -17521,7 +17521,7 @@ Tileset_64:
 	dbw Tileset_0x04F370
 	dw $8A00
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x0139E0
@@ -17536,16 +17536,16 @@ Tileset_64:
 
 Tileset_65:
 	db $0C
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x055180
@@ -17560,7 +17560,7 @@ Tileset_65:
 	dbw Tileset_0x055D00
 	dw $9000
 	dw $0080
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F6F0
@@ -17575,22 +17575,22 @@ Tileset_65:
 
 Tileset_66:
 	db $09
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x054640
 	dw $89E0
 	dw $05A0
-	dbw Tileset_0x0135E0
+	dbw Tileset_Enemies1
 	dw $8000
 	dw $02A0
 	dbw Tileset_0x04F6F0
@@ -17605,16 +17605,16 @@ Tileset_66:
 
 Tileset_67:
 	db $06
-	dbw Tileset_0x011800
+	dbw Tileset_LevelCommon
 	dw $8400
 	dw $0300
-	dbw Tileset_0x011B00
+	dbw Tileset_Cabbage
 	dw $8800
 	dw $0100
-	dbw Tileset_0x011C00
+	dbw Tileset_LevelUnderPipe
 	dw $8F80
 	dw $0080
-	dbw Tileset_0x011C80
+	dbw Tileset_LevelUnderCommon
 	dw $9000
 	dw $0800
 	dbw Tileset_0x0633C0
@@ -28622,20 +28622,20 @@ SECTION "Bank04", ROMX, BANK[$04]
 Tileset_0x010000:
 INCBIN "gfx/tilesets/tileset_0x010000.2bpp"  ; $010000 - $011800
 
-Tileset_0x011800:
-INCBIN "gfx/tilesets/tileset_0x011800.2bpp"  ; $011800 - $011B00
+Tileset_LevelCommon:
+INCBIN "gfx/tilesets/level_common.2bpp"  ; $011800 - $011B00
 
-Tileset_0x011B00:
-INCBIN "gfx/tilesets/tileset_0x011B00.2bpp"  ; $011B00 - $011C00
+Tileset_Cabbage:
+INCBIN "gfx/tilesets/cabbage.2bpp"  ; $011B00 - $011C00
 
-Tileset_0x011C00:
-INCBIN "gfx/tilesets/tileset_0x011C00.2bpp"  ; $011C00 - $011C80
+Tileset_LevelUnderPipe:
+INCBIN "gfx/tilesets/level_under_pipe.2bpp"  ; $011C00 - $011C80
 
-Tileset_0x011C80:
-INCBIN "gfx/tilesets/tileset_0x011C80.2bpp"  ; $011C80 - $012480
+Tileset_LevelUnderCommon:
+INCBIN "gfx/tilesets/level_under_common.2bpp"  ; $011C80 - $012480
 
-Tileset_0x012480:
-INCBIN "gfx/tilesets/tileset_0x012480.2bpp"  ; $012480 - $012AA0
+Tileset_LevelWoods:
+INCBIN "gfx/tilesets/level_woods.2bpp"  ; $012480 - $012AA0
 
 Tileset_0x012AA0:
 INCBIN "gfx/tilesets/tileset_0x012AA0.2bpp"  ; $012AA0 - $013040
@@ -28643,8 +28643,8 @@ INCBIN "gfx/tilesets/tileset_0x012AA0.2bpp"  ; $012AA0 - $013040
 Tileset_0x013040:
 INCBIN "gfx/tilesets/tileset_0x013040.2bpp"  ; $013040 - $0135E0
 
-Tileset_0x0135E0:
-INCBIN "gfx/tilesets/tileset_0x0135E0.2bpp"  ; $0135E0 - $013880
+Tileset_Enemies1:
+INCBIN "gfx/tilesets/enemies1.2bpp"  ; $0135E0 - $013880
 
 Tileset_0x013880:
 INCBIN "gfx/tilesets/tileset_0x013880.2bpp"  ; $013880 - $0139E0

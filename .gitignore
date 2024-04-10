@@ -8,4 +8,4 @@
 *.ini
 *.sna
 *.2bpp
-
+tools/bpp2png
